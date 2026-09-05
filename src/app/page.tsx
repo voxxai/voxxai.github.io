@@ -342,6 +342,7 @@ export default function HomePage() {
         <span>© {new Date().getFullYear()} voxxxiee</span>
         <span>Designed &amp; built by Voxxai</span>
         <a href="#top">Back to top ↑</a>
+        <a href="/privacy.html" lang="nl">Privacy &amp; cookies</a>
       </footer>
     </div>
   );
