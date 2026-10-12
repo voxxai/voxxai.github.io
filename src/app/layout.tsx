@@ -3,13 +3,13 @@ import "../index.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Voxxai — Software Engineer",
-    template: "%s | VOXXAI",
+    default: "voxxxiee — Software Engineer",
+    template: "%s | voxxxiee",
   },
   description:
-    "Portfolio of voxxxiee (Voxxai), a software engineer building web apps, APIs and product systems.",
+    "Portfolio of voxxxiee (voxxxiee), a software engineer building web apps, APIs and product systems.",
   keywords: [
-    "Voxxai",
+    "voxxxiee",
     "Full-Stack Developer",
     "React Developer",
     "TypeScript",
@@ -17,19 +17,19 @@ export const metadata: Metadata = {
     "Frontend Engineer",
     "Portfolio",
   ],
-  authors: [{ name: "Voxxai" }],
-  creator: "Voxxai",
+  authors: [{ name: "voxxxiee" }],
+  creator: "voxxxiee",
   openGraph: {
-    title: "Voxxai — Software Engineer",
+    title: "voxxxiee — Software Engineer",
     description:
       "voxxxiee builds web apps, APIs and product systems.",
     type: "website",
     locale: "en_US",
-    siteName: "VOXXAI Portfolio",
+    siteName: "voxxxiee Portfolio",
   },
   twitter: {
     card: "summary",
-    title: "Voxxai — Software Engineer",
+    title: "voxxxiee — Software Engineer",
     description:
       "voxxxiee builds web apps, APIs and product systems.",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
     apple: "/apple-touch-icon.png",
   },
-  metadataBase: new URL("https://voxxai.nl"),
+  metadataBase: new URL("https://voxxai.dev"),
 };
 
 export const viewport = {

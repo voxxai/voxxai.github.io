@@ -56,8 +56,8 @@ export default function HomePage() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Voxxai, back to top">
-          VOXXAI<span className="wordmark-mark">//</span>
+        <a className="wordmark" href="#top" aria-label="voxxxiee, back to top">
+          voxxxiee<span className="wordmark-mark">//</span>
         </a>
 
         <nav className="site-nav" aria-label="Primary navigation">
@@ -92,7 +92,7 @@ export default function HomePage() {
                 <ArrowDownRight aria-hidden="true" size={18} />
               </a>
               <ExternalLink
-                href="https://github.com/Voxxai"
+                href="https://github.com/voxxxiee"
                 className="button button-secondary"
               >
                 GitHub
@@ -122,7 +122,7 @@ export default function HomePage() {
             <div className="profile-image-wrap">
               <Image
                 src="/jinx-avatar.webp"
-                alt="Jinx artwork used as Voxxai's profile image"
+                alt="Jinx artwork used as voxxxiee's profile image"
                 fill
                 priority
                 sizes="(max-width: 900px) 82vw, 420px"
@@ -130,7 +130,7 @@ export default function HomePage() {
               />
             </div>
             <figcaption>
-              <span>VØXX⟁I</span>
+              <span>voxxxiee</span>
               <ChaosSwitch />
             </figcaption>
           </figure>
@@ -211,7 +211,7 @@ export default function HomePage() {
           </div>
           <div className="about-copy">
             <p className="about-statement">
-              I&apos;m Gilian, better known online as Voxxai. I graduated in
+              I&apos;m Gilian, better known online as voxxxiee. I graduated in
               Computer Science at Hogeschool Rotterdam and now build software
               professionally.
             </p>
@@ -300,7 +300,7 @@ export default function HomePage() {
               <NowPlayingSignal />
               <p>The BPM may be considered a health hazard.</p>
               <ExternalLink
-                href="https://github.com/Voxxai/Spotify-Readme"
+                href="https://github.com/voxxxiee/Spotify-Readme"
                 className="text-link now-playing-source"
               >
                 Self-hosted public fork
@@ -323,7 +323,7 @@ export default function HomePage() {
                 <ArrowUpRight aria-hidden="true" size={26} />
               </a>
               <div className="social-links" aria-label="Social links">
-                <ExternalLink href="https://github.com/Voxxai">
+                <ExternalLink href="https://github.com/voxxxiee">
                   <Github aria-hidden="true" size={18} /> GitHub
                 </ExternalLink>
                 <ExternalLink href="">
@@ -340,7 +340,7 @@ export default function HomePage() {
 
       <footer className="site-footer section-frame">
         <span>© {new Date().getFullYear()} voxxxiee</span>
-        <span>Designed &amp; built by Voxxai</span>
+        <span>Designed &amp; built by voxxxiee</span>
         <a href="#top">Back to top ↑</a>
         <a href="/privacy.html" lang="nl">Privacy &amp; cookies</a>
       </footer>
