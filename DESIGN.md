@@ -1,4 +1,4 @@
-# Voxxai visual system
+# voxxxiee visual system
 
 ## Thesis
 
