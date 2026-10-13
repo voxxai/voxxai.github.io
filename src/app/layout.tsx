@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Chakra_Petch, Orbitron } from "next/font/google";
 import "../index.css";
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["500", "700", "900"],
+  variable: "--font-orbitron",
+  display: "swap",
+});
+
+const chakra = Chakra_Petch({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-chakra",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -7,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | voxxxiee",
   },
   description:
-    "Portfolio of Gilian Kranendonk (voxxxiee), a software engineer building web apps, APIs and product systems.",
+    "Portfolio of Gilian (voxxxiee), a software engineer building web apps, APIs and product systems.",
   keywords: [
     "voxxxiee",
     "Full-Stack Developer",
@@ -22,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "voxxxiee — Software Engineer",
     description:
-      "Gilian Kranendonk builds web apps, APIs and product systems.",
+      "Gilian builds web apps, APIs and product systems.",
     type: "website",
     locale: "en_US",
     siteName: "voxxxiee Portfolio",
@@ -31,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "voxxxiee — Software Engineer",
     description:
-      "Gilian Kranendonk builds web apps, APIs and product systems.",
+      "Gilian builds web apps, APIs and product systems.",
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -44,7 +59,7 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#080a0f",
+  themeColor: "#0a0a0d",
 };
 
 export default function RootLayout({
@@ -53,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${orbitron.variable} ${chakra.variable}`} suppressHydrationWarning>
       <head />
       <body>
         {children}

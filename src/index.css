@@ -3,17 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --ink: #080a0f;
-  --panel: #0d1017;
+  --ink: #0a0a0d;
+  --panel: #121217;
   --line: rgba(221, 229, 255, 0.14);
   --line-strong: rgba(221, 229, 255, 0.28);
   --text: #f5f6fb;
   --muted: #a1a8b8;
-  --blue: #4974ff;
-  --pink: #f024ce;
-  --signal: #d8ff3e;
-  --display: "Archivo", "Segoe UI", sans-serif;
-  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --blue: #e8b84a;
+  --pink: #ff1f3d;
+  --signal: #e8b84a;
+  --display: var(--font-chakra), "Segoe UI", sans-serif;
+  --heading: var(--font-orbitron), var(--font-chakra), sans-serif;
+  --red: #ff1f3d;
+  --red-deep: #b0001c;
+  --gold: #e8b84a;
+  --cut: 14px;
+  --mono: var(--font-chakra), "SFMono-Regular", Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -182,7 +187,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button:hover, .button:focus-visible { transform: translateY(-2px); }
 .button-primary { color: #080a0f; border-color: var(--signal); background: var(--signal); }
 .button-primary:hover, .button-primary:focus-visible { background: #e6ff81; }
-.button-secondary:hover, .button-secondary:focus-visible { border-color: var(--pink); background: rgba(240, 36, 206, 0.08); }
+.button-secondary:hover, .button-secondary:focus-visible { border-color: var(--pink); background: rgba(255, 31, 61, 0.08); }
 
 .quick-facts {
   display: grid;
@@ -219,7 +224,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: absolute;
   inset: 1.1rem -1.1rem -1.1rem 1.1rem;
   border: 1px solid var(--blue);
-  background: linear-gradient(135deg, rgba(73, 116, 255, 0.18), transparent 45%), rgba(73, 116, 255, 0.03);
+  background: linear-gradient(135deg, rgba(232, 184, 74, 0.18), transparent 45%), rgba(232, 184, 74, 0.03);
   clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
   transition: transform 180ms ease, border-color 180ms ease;
 }
@@ -228,7 +233,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: relative;
   aspect-ratio: 1;
   overflow: hidden;
-  border: 1px solid rgba(240, 36, 206, 0.72);
+  border: 1px solid rgba(255, 31, 61, 0.72);
   background: var(--panel);
   clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
   transition: transform 180ms ease, border-color 180ms ease;
@@ -407,8 +412,8 @@ html[data-chaos="on"] .wordmark-mark { color: var(--signal); }
 
 .project-row:hover, .project-row:focus-visible {
   padding-inline: 1rem;
-  border-color: rgba(240, 36, 206, 0.55);
-  background: rgba(240, 36, 206, 0.035);
+  border-color: rgba(255, 31, 61, 0.55);
+  background: rgba(255, 31, 61, 0.035);
 }
 
 .project-number, .project-kind, .project-language {
@@ -692,3 +697,57 @@ html[data-chaos="on"] .wordmark-mark { color: var(--signal); }
 .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-block: 1rem; }
 .site-footer a { display: inline-flex; align-items: center; min-height: 44px; }
 .widget-privacy { color: var(--muted); font-size: .85rem; line-height: 1.6; }
+
+/* ===== Castle style (shared with the Vox stream overlays) ===== */
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 70% 0%, rgba(255, 31, 61, 0.09), transparent 70%),
+    linear-gradient(rgba(255, 31, 61, 0.05) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(90deg, rgba(255, 31, 61, 0.05) 1px, transparent 1px) 0 0 / 48px 48px,
+    var(--ink);
+}
+
+.hero h1, .section-heading h2, .about-lead h2, .signal-heading h2, .contact-layout h2,
+.featured-project h3, .project-row h3, .stack-group h3, .signal-notes h3 {
+  font-family: var(--heading);
+  letter-spacing: 0.01em;
+}
+
+.hero h1 { font-size: clamp(2.6rem, 5.6vw, 5.4rem); font-weight: 900; line-height: 0.98; }
+.hero h1 span { -webkit-text-stroke: 1.2px rgba(255, 31, 61, 0.85); }
+.section-heading h2, .about-lead h2, .signal-heading h2, .contact-layout h2 { font-size: clamp(2rem, 4.2vw, 4rem); line-height: 1.05; }
+.wordmark { font-family: var(--heading); font-weight: 700; }
+.section-label { color: var(--red); font-family: var(--heading); letter-spacing: 0.24em; }
+.section-label::before { content: "\25C6  "; color: var(--gold); }
+
+.button, .featured-project, .now-playing, .profile-image-wrap {
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
+}
+.button { border-radius: 0; text-transform: uppercase; letter-spacing: 0.08em; }
+.button-primary { color: #0a0a0d; border-color: var(--red); background: var(--red); }
+.button-primary:hover, .button-primary:focus-visible { background: #ff4a63; box-shadow: 0 0 22px rgba(255, 31, 61, 0.55); }
+.button-secondary { border-color: rgba(232, 184, 74, 0.6); }
+.button-secondary:hover, .button-secondary:focus-visible { border-color: var(--gold); background: rgba(232, 184, 74, 0.08); }
+
+.profile-image-wrap { border-color: var(--red); box-shadow: 0 0 34px rgba(255, 31, 61, 0.28); }
+.profile-offset { border-color: var(--gold); }
+.featured-project { border-left-color: var(--red); background: linear-gradient(135deg, rgba(255, 31, 61, 0.07), transparent 45%), var(--panel); }
+.now-playing { border-top-color: var(--red); }
+.stack-group { background: rgba(18, 18, 23, 0.82); transition: border-color 180ms ease, box-shadow 180ms ease; }
+.stack-group:hover { box-shadow: inset 0 0 0 1px rgba(255, 31, 61, 0.45), 0 0 24px rgba(255, 31, 61, 0.12); }
+.email-link:hover, .email-link:focus-visible { color: var(--red); text-shadow: 0 0 18px rgba(255, 31, 61, 0.45); }
+::selection { color: #0a0a0d; background: var(--gold); }
+:focus-visible { outline-color: var(--gold); }
+
+html[data-chaos="on"] .hero h1 span { text-shadow: 4px 0 var(--red), -4px 0 var(--gold); }
+html[data-chaos="on"] .profile-image-wrap { border-color: var(--gold); }
+html[data-chaos="on"] .profile-offset { border-color: var(--red); }
+
+@media (max-width: 650px) {
+  .hero h1 { font-size: clamp(2.1rem, 10.5vw, 3.4rem); }
+  .section-heading h2, .about-lead h2, .signal-heading h2, .contact-layout h2 { font-size: clamp(1.8rem, 8.5vw, 2.8rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-primary:hover, .stack-group:hover { box-shadow: none; }
+}
