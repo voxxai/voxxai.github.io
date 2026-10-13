@@ -74,7 +74,7 @@ export default function HomePage() {
       <main id="top">
         <section className="hero section-frame" aria-labelledby="hero-title">
           <div className="hero-copy">
-            <p className="section-label">01 / GILIAN </p>
+            <p className="section-label">01 / GILIAN</p>
             <h1 id="hero-title">
               Build it. Break it.
               <span>Build it better.</span>
@@ -121,8 +121,8 @@ export default function HomePage() {
             <div className="profile-offset" aria-hidden="true" />
             <div className="profile-image-wrap">
               <Image
-                src="/jinx-avatar.webp"
-                alt="Jinx artwork used as voxxxiee's profile image"
+                src="/castle-portrait.webp"
+                alt="Vox, the blond hooded original character used as voxxxiee's avatar"
                 fill
                 priority
                 sizes="(max-width: 900px) 82vw, 420px"
