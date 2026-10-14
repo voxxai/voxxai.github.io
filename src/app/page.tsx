@@ -3,7 +3,6 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   Github,
-  Linkedin,
   Mail,
   MapPin,
 } from "lucide-react";
@@ -107,7 +106,7 @@ export default function HomePage() {
               <div>
                 <dt>Based</dt>
                 <dd>
-                  <MapPin aria-hidden="true" size={14} /> Netherlands, NL
+                  <MapPin aria-hidden="true" size={14} /> Netherlands
                 </dd>
               </div>
               <div>
@@ -325,9 +324,6 @@ export default function HomePage() {
               <div className="social-links" aria-label="Social links">
                 <ExternalLink href="https://github.com/voxxxiee">
                   <Github aria-hidden="true" size={18} /> GitHub
-                </ExternalLink>
-                <ExternalLink href="">
-                  <Linkedin aria-hidden="true" size={18} /> LinkedIn
                 </ExternalLink>
                 <a href="mailto:contact@voxxai.dev">
                   <Mail aria-hidden="true" size={18} /> Email

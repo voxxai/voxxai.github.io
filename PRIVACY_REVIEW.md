@@ -12,7 +12,7 @@ The static HTML route intentionally bypasses the Next root layout.
 No Vercel settings, historical data, subscription, email or DNS records were changed.
 
 ## Owner decisions / unresolved verification
-- CONFIRMED by owner: voxxxiee may be named exclusively in the privacy notice; privacy contact is contact@voxxai.dev. No residential address is included.
+- CONFIRMED by owner: the owner's legal name may be named exclusively in the privacy notice; privacy contact is contact@voxxai.dev. No residential address is included.
 - Confirm Vercel contractual roles, processing terms and international safeguards for the actual Hobby subscription. The published DPA currently expressly covers Pro/Enterprise, not Hobby. Do not claim Hobby is automatically unlawful, or a DPA exists, based on this alone. Ask Vercel or qualified advice before concluding; no paid upgrade authorized.
 - Establish actual hosting/security log retention and what past analytics data remains. Published runtime-log limits are not proof that all infrastructure data is deleted then.
 - CONFIRMED by owner: once contact is answered and handled, received messages AND sent replies go to trash; trash is emptied once per month. This is owner-reported practice, not an independently verified mailbox setting. Provider-managed backups/copies and Google/Gmail roles/transfers remain to be assessed. No mailbox data or settings were changed.
