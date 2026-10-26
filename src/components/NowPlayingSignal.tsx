@@ -11,7 +11,7 @@ export function NowPlayingSignal() {
       <div>
         <p className="widget-privacy">
           Optional external content: loading the music widget sends your IP
-          address and browser information to voxxxiee&apos;s PythonAnywhere service.
+          address and browser information to voxxai&apos;s PythonAnywhere service.
           Your choice lasts only while this component stays open.{" "}
           <a href="/privacy.html">Privacy details</a>
         </p>
@@ -39,7 +39,7 @@ export function NowPlayingSignal() {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src="https://voxxai.pythonanywhere.com/?theme=dark&spin=true&eq_color=FF2D95"
-            alt="voxxxiee's currently playing Spotify track"
+            alt="voxxai's currently playing Spotify track"
             width="495" height="135" referrerPolicy="no-referrer"
             onError={() => setFailed(true)}
           />

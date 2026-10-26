@@ -1,4 +1,4 @@
-# voxxxiee visual system — Castle
+# voxxai visual system — Castle
 
 ## Thesis
 

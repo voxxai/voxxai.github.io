@@ -18,13 +18,13 @@ const chakra = Chakra_Petch({
 
 export const metadata: Metadata = {
   title: {
-    default: "voxxxiee — Software Engineer",
-    template: "%s | voxxxiee",
+    default: "voxxai — Software Engineer",
+    template: "%s | voxxai",
   },
   description:
-    "Portfolio of Gilian (voxxxiee), a software engineer building web apps, APIs and product systems.",
+    "Portfolio of Gilian (voxxai), a software engineer building web apps, APIs and product systems.",
   keywords: [
-    "voxxxiee",
+    "voxxai",
     "Full-Stack Developer",
     "React Developer",
     "TypeScript",
@@ -32,19 +32,19 @@ export const metadata: Metadata = {
     "Frontend Engineer",
     "Portfolio",
   ],
-  authors: [{ name: "voxxxiee" }],
-  creator: "voxxxiee",
+  authors: [{ name: "voxxai" }],
+  creator: "voxxai",
   openGraph: {
-    title: "voxxxiee — Software Engineer",
+    title: "voxxai — Software Engineer",
     description:
       "Gilian builds web apps, APIs and product systems.",
     type: "website",
     locale: "en_US",
-    siteName: "voxxxiee Portfolio",
+    siteName: "voxxai Portfolio",
   },
   twitter: {
     card: "summary",
-    title: "voxxxiee — Software Engineer",
+    title: "voxxai — Software Engineer",
     description:
       "Gilian builds web apps, APIs and product systems.",
   },
