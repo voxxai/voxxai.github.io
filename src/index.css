@@ -3,20 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --ink: #0a0a0d;
-  --panel: #121217;
-  --line: rgba(221, 229, 255, 0.14);
-  --line-strong: rgba(221, 229, 255, 0.28);
-  --text: #f5f6fb;
-  --muted: #a1a8b8;
-  --blue: #e8b84a;
-  --pink: #ff1f3d;
-  --signal: #e8b84a;
+  /* VOX / Castle brand tokens (canonical) */
+  --vox-ink: #0a0a0d;
+  --vox-panel: #121217;
+  --vox-text: #f5f6fb;
+  --vox-muted: #a1a8b8;
+  --vox-red: #ff1f3d;
+  --vox-red-deep: #b0001c;
+  --vox-gold: #e8b84a;
+  --vox-ember: #ff5a6e;
+  --vox-line: rgba(221, 229, 255, 0.14);
+  --vox-line-strong: rgba(221, 229, 255, 0.28);
+
+  /* Aliases used across the site */
+  --ink: var(--vox-ink);
+  --panel: var(--vox-panel);
+  --line: var(--vox-line);
+  --line-strong: var(--vox-line-strong);
+  --text: var(--vox-text);
+  --muted: var(--vox-muted);
+  --blue: var(--vox-gold);
+  --pink: var(--vox-red);
+  --signal: var(--vox-gold);
   --display: var(--font-chakra), "Segoe UI", sans-serif;
   --heading: var(--font-orbitron), var(--font-chakra), sans-serif;
-  --red: #ff1f3d;
-  --red-deep: #b0001c;
-  --gold: #e8b84a;
+  --red: var(--vox-red);
+  --red-deep: var(--vox-red-deep);
+  --gold: var(--vox-gold);
   --cut: 14px;
   --mono: var(--font-chakra), "SFMono-Regular", Consolas, monospace;
 }

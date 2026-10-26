@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "Web Development",
     "Frontend Engineer",
     "Portfolio",
+    "Voxxai",
+    "VOX",
+    "Castle",
   ],
   authors: [{ name: "voxxai" }],
   creator: "voxxai",
@@ -59,7 +62,11 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0d",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0d" },
+    { media: "(prefers-color-scheme: light)", color: "#0a0a0d" },
+  ],
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
