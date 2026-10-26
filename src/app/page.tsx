@@ -9,7 +9,6 @@ import {
 import { projects } from "@/data/projects";
 import { skillsByCategory } from "@/data/skills";
 import { ChaosSwitch } from "@/components/ChaosSwitch";
-import { NowPlayingSignal } from "@/components/NowPlayingSignal";
 
 const mainLinks = [
   { href: "#work", label: "Work" },
@@ -290,21 +289,6 @@ export default function HomePage() {
                 <p>Anime · AI · hardware · whatever ships next</p>
               </article>
             </div>
-
-            <aside className="now-playing" aria-labelledby="now-playing-title">
-              <div className="now-playing-header">
-                <span id="now-playing-title">LIVE AUDIO SIGNAL</span>
-                <span>SPOTIFY</span>
-              </div>
-              <NowPlayingSignal />
-              <p>The BPM may be considered a health hazard.</p>
-              <ExternalLink
-                href="https://github.com/voxxai/Spotify-Readme"
-                className="text-link now-playing-source"
-              >
-                Self-hosted public fork
-              </ExternalLink>
-            </aside>
           </div>
         </section>
 
