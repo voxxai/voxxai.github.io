@@ -4,27 +4,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        neonRed: "#ff1a1a",
-        neonBlack: "#1a1a1a",
-        midnight: "#0a0a0a",
-        ink: "#0f0f0f",
-      },
-      boxShadow: {
-        glowRed: "0 0 25px rgba(255, 26, 26, 0.35)",
-        glowBlack: "0 0 25px rgba(26, 26, 26, 0.35)",
-        innerNeon:
-          "0 0 40px rgba(255, 26, 26, 0.3), 0 0 60px rgba(200, 30, 30, 0.25)",
+        ink: "#161411",
+        paper: "#f3efe6",
+        mute: "#b7ad9f",
+        brass: "#e0c27a",
+        oxide: "#f0a598",
+        line: "rgba(243, 239, 230, 0.16)",
       },
       fontFamily: {
-        display: [
-          '"Space Grotesk"',
-          '"JetBrains Mono"',
-          '"Segoe UI"',
+        sans: [
+          "var(--font-sans)",
+          "ui-sans-serif",
+          "system-ui",
           "sans-serif",
         ],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
-      backgroundImage: {
-        grid: "radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0)",
+      maxWidth: {
+        measure: "38rem",
       },
     },
   },

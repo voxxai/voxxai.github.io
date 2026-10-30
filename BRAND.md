@@ -33,8 +33,9 @@ Discord embed color integer: `0xff1f3d`.
 
 ## Typography
 
-- Display / wordmarks: **Orbitron** (site), heavy geometric sans elsewhere
-- UI / body: **Chakra Petch** or system UI sans
+- Stream overlays / wordmarks: **Orbitron**, heavy geometric sans elsewhere
+- voxxai.dev: **Source Serif 4** for headlines, **Familjen Grotesk** for text (see DESIGN.md)
+- Stream UI: **Chakra Petch** or system UI sans
 - Tone: short, castle-metaphor, Dutch-first for stream chat; EN ok for portfolio
 
 ## Voice
@@ -55,7 +56,7 @@ Discord embed color integer: `0xff1f3d`.
 | Surface | Brand rule |
 |---|---|
 | GitHub profile | Voxxai name, VOX-colored stats cards, link to this doc |
-| voxxai.dev | CSS tokens above, themeColor ink, favicon from `public/favicon.svg` |
+| voxxai.dev | Quieter reading site; type and color in DESIGN.md. themeColor `#161411`, favicon from `public/favicon.svg` |
 | linktree | Same tokens; Twitch tile keeps `twitch.tv/voxxxiee` |
 | Discord live | Title/content **Voxxai**; button URL from Twitch login |
 | OBS overlays | Tag `VOXXAI · the Castle`; URL panel shows real Twitch login |

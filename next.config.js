@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // next dev otherwise writes AGENTS.md / CLAUDE.md into the repo.
+  agentRules: false,
   async headers() {
     return [
       {

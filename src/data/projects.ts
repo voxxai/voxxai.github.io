@@ -1,5 +1,7 @@
 export type RepoCard = {
   name: string;
+  title: string;
+  kind: string;
   description: string;
   html_url: string;
   language: string;
@@ -9,6 +11,8 @@ export type RepoCard = {
 export const projects: RepoCard[] = [
   {
     name: "ProjectC",
+    title: "ProjectC",
+    kind: "School platform",
     description:
       "Full-stack school platform (CRA + Node/Express/MySQL) covering events, news, profiles, and 2FA-secured auth.",
     html_url: "https://github.com/voxxai/ProjectC",
@@ -17,6 +21,8 @@ export const projects: RepoCard[] = [
   },
   {
     name: "Django_Project",
+    title: "Django Project",
+    kind: "Learning build",
     description:
       "Learning project in Django/Python with CRUD patterns and classic Django templating/auth flows.",
     html_url: "https://github.com/voxxai/Django_Project",

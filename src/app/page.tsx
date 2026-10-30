@@ -1,329 +1,156 @@
 import Image from "next/image";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Github,
-  Mail,
-  MapPin,
-} from "lucide-react";
-import { projects } from "@/data/projects";
+import { elsewhere, identity, profiles } from "@/data/site";
 import { skillsByCategory } from "@/data/skills";
-import { ChaosSwitch } from "@/components/ChaosSwitch";
-
-const mainLinks = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#signal", label: "Off-screen" },
-  { href: "#contact", label: "Contact" },
-];
-
-const projectMeta: Record<
-  string,
-  { kind: string; number: string; liveUrl?: string }
-> = {
-  ProjectC: { kind: "Archived school platform", number: "01" },
-  Django_Project: { kind: "Archived learning build", number: "02" },
-};
-
-function ExternalLink({
-  href,
-  children,
-  className = "",
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className={className}
-    >
-      {children}
-      <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />
-    </a>
-  );
-}
+import { IndexList } from "@/components/IndexList";
+import { ProjectList } from "@/components/ProjectList";
+import { Rail } from "@/components/Rail";
+import { Section } from "@/components/Section";
+import { TextLink } from "@/components/TextLink";
 
 export default function HomePage() {
-  const featuredProject = projects[0];
-  const otherProjects = projects.slice(1);
-
   return (
-    <div className="site-shell">
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Voxxai, back to top">
-          voxxai<span className="wordmark-mark">//</span>
-        </a>
+    <div
+      id="top"
+      className="mx-auto grid w-[min(1080px,calc(100%-2rem))] md:grid-cols-[11.5rem_minmax(0,1fr)] md:gap-x-12"
+    >
+      <Rail />
 
-        <nav className="site-nav" aria-label="Primary navigation">
-          {mainLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <span className="header-role">SOFTWARE ENGINEER · NL</span>
-      </header>
-
-      <main id="top">
-        <section className="hero section-frame" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <p className="section-label">01 / GILIAN</p>
-            <h1 id="hero-title">
-              Build it. Break it.
-              <span>Build it better.</span>
-            </h1>
-            <p className="hero-intro">
-              Software Engineer with a soft spot for the machinery behind the
-              UI: APIs, authentication, architecture, data flows and
-              automation. I build things I need, things I want to understand
-              and occasionally things that should have taken five minutes.
-            </p>
-
-            <div className="hero-actions">
-              <a className="button button-primary" href="#work">
-                See selected work
-                <ArrowDownRight aria-hidden="true" size={18} />
-              </a>
-              <ExternalLink
-                href="https://github.com/voxxai"
-                className="button button-secondary"
+      <div className="pb-16 md:pb-20">
+        <main id="content" tabIndex={-1}>
+          <section
+            className="grid items-start gap-10 py-10 md:grid-cols-[minmax(0,1fr)_minmax(220px,300px)] md:gap-12 md:py-16"
+            aria-labelledby="hero-title"
+          >
+            <div className="max-w-measure md:order-none order-2">
+              <h1
+                id="hero-title"
+                className="m-0 font-serif text-[clamp(2.45rem,5vw,3.7rem)] font-normal leading-[1.08] tracking-tight text-balance"
               >
-                GitHub
-              </ExternalLink>
-            </div>
-
-            <dl className="quick-facts">
-              <div>
-                <dt>Focus</dt>
-                <dd>Backend · auth · automation</dd>
-              </div>
-              <div>
-                <dt>Based</dt>
-                <dd>
-                  <MapPin aria-hidden="true" size={14} /> Netherlands
-                </dd>
-              </div>
-              <div>
-                <dt>Exploring</dt>
-                <dd>Rust · Linux · AI tooling</dd>
-              </div>
-            </dl>
-          </div>
-
-          <figure className="profile-block">
-            <div className="profile-offset" aria-hidden="true" />
-            <div className="profile-image-wrap">
-              <Image
-                src="/castle-portrait.webp"
-                alt="Vox, the blond hooded original character used as voxxai's avatar"
-                fill
-                priority
-                sizes="(max-width: 900px) 82vw, 420px"
-                className="profile-image"
-              />
-            </div>
-            <figcaption>
-              <span>voxxai</span>
-              <ChaosSwitch />
-            </figcaption>
-          </figure>
-        </section>
-
-        <section className="work-section section-frame" id="work">
-          <div className="section-heading">
-            <div>
-              <p className="section-label">02 / SELECTED WORK</p>
-              <h2>Useful builds, not filler.</h2>
-            </div>
-            <p>
-              A small public archive: two earlier builds.
-              Every source link opens without an account.
-            </p>
-          </div>
-
-          <article className="featured-project">
-            <div className="project-index">
-              <span>{projectMeta[featuredProject.name]?.number}</span>
-              <span>{projectMeta[featuredProject.name]?.kind}</span>
-            </div>
-            <div className="featured-project-copy">
-              <div className="project-title-row">
-                <h3>{featuredProject.name}</h3>
-                <span className="status-badge">\n                  {featuredProject.archived ? "ARCHIVED" : "ACTIVE"}\n                </span>
-              </div>
-              <p>{featuredProject.description}</p>
-              <div className="project-footer">
-                <span>{featuredProject.language}</span>
-                <div className="project-links">
-                  {projectMeta[featuredProject.name]?.liveUrl && (
-                    <ExternalLink
-                      href={projectMeta[featuredProject.name].liveUrl!}
-                      className="text-link"
-                    >
-                      Live app
-                    </ExternalLink>
-                  )}
-                  <ExternalLink
-                    href={featuredProject.html_url}
-                    className="text-link"
-                  >
-                    Source
-                  </ExternalLink>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <div className="project-list">
-            {otherProjects.map((project) => {
-              const meta = projectMeta[project.name];
-
-              return (
-                <ExternalLink
-                  key={project.name}
-                  href={project.html_url}
-                  className="project-row"
+                Software, mostly the quiet parts.
+              </h1>
+              <p className="mt-6 text-[1.075rem] leading-7">
+                I&apos;m {identity.givenName}. Online, I&apos;m {identity.handle}.
+                I build web apps in the {identity.location}, and I care about
+                the pieces that have to keep working: auth, data, deploys, and
+                the screen on top of them.
+              </p>
+              <p className="mt-6">
+                <a
+                  href="#work"
+                  className="underline decoration-oxide decoration-1 underline-offset-[0.22em] hover:text-brass"
                 >
-                  <span className="project-number">{meta?.number}</span>
-                  <div>
-                    <span className="project-kind">{meta?.kind}</span>
-                    <h3>{project.name.replace("_", " ")}</h3>
-                  </div>
-                  <p>{project.description}</p>
-                  <span className="project-language">{project.language}</span>
-                </ExternalLink>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="about-section section-frame" id="about">
-          <div className="about-lead">
-            <p className="section-label">03 / ABOUT</p>
-            <h2>Engineer by trade. Tinkerer by default.</h2>
-          </div>
-          <div className="about-copy">
-            <p className="about-statement">
-              I&apos;m Gilian, better known online as Voxxai. I graduated in
-              Computer Science at Hogeschool Rotterdam and now build software
-              professionally.
-            </p>
-            <div className="about-columns">
-              <p>
-                I like code that is readable, interfaces that get out of the
-                way and systems that remain understandable six months later.
-                My work sits between frontend, backend and the product choices
-                connecting both.
-              </p>
-              <p>
-                Away from work, you&apos;ll usually find me gaming, keeping an eye
-                on new hardware and AI, or turning my Raspberry Pi into one
-                more thing it probably wasn&apos;t bought for.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="stack-section section-frame" id="stack">
-          <div className="section-heading stack-heading">
-            <div>
-              <p className="section-label">04 / TOOLKIT</p>
-              <h2>What I reach for.</h2>
-            </div>
-            <p>
-              The stack changes with the problem. These are the tools and
-              patterns I&apos;m most comfortable shipping with today.
-            </p>
-          </div>
-
-          <div className="stack-grid">
-            {skillsByCategory.map((group, index) => (
-              <article key={group.category} className="stack-group">
-                <span className="stack-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{group.category}</h3>
-                <p>{group.items.join(" / ")}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="signal-section section-frame" id="signal">
-          <div className="signal-heading">
-            <div>
-              <p className="section-label">05 / OFF-SCREEN SIGNAL</p>
-              <h2>The rest of the operating system.</h2>
-            </div>
-            <p>
-              Code is only one tab. The others usually contain a Docker log,
-              a game, a hardware rabbit hole or music at an unreasonable BPM.
-            </p>
-          </div>
-
-          <div className="signal-layout">
-            <div className="signal-notes">
-              <article>
-                <span>HOME_01</span>
-                <h3>Raspberry Pi 5</h3>
-                <p>Docker · Discord bot · Twitch bot · homelab experiments</p>
-              </article>
-              <article>
-                <span>QUEUE_02</span>
-                <h3>Games</h3>
-                <p>Warframe · Fortnite · ZZZ · Wuthering Waves</p>
-              </article>
-              <article>
-                <span>AUDIO_03</span>
-                <h3>High BPM only</h3>
-                <p>Hardcore · Frenchcore · Uptempo</p>
-              </article>
-              <article>
-                <span>RADAR_04</span>
-                <h3>Currently watching</h3>
-                <p>Anime · AI · hardware · whatever ships next</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="contact-section section-frame" id="contact">
-          <p className="section-label">06 / SAY HELLO</p>
-          <div className="contact-layout">
-            <h2>Got something worth building?</h2>
-            <div className="contact-copy">
-              <p>
-                If you want to talk code, a project, or a particularly cursed
-                homelab idea, my inbox is open.
-              </p>
-              <a className="email-link" href="mailto:contact@voxxai.dev">
-                contact@voxxai.dev
-                <ArrowUpRight aria-hidden="true" size={26} />
-              </a>
-              <div className="social-links" aria-label="Social links">
-                <ExternalLink href="https://github.com/voxxai">
-                  <Github aria-hidden="true" size={18} /> GitHub
-                </ExternalLink>
-                <a href="mailto:contact@voxxai.dev">
-                  <Mail aria-hidden="true" size={18} /> Email
+                  See the work
                 </a>
-              </div>
+              </p>
             </div>
-          </div>
-        </section>
-      </main>
 
-      <footer className="site-footer section-frame">
-        <span>© {new Date().getFullYear()} voxxai</span>
-        <span>Designed &amp; built by voxxai</span>
-        <a href="#top">Back to top ↑</a>
-        <a href="/privacy.html" lang="nl">Privacy &amp; cookies</a>
-      </footer>
+            <figure className="order-1 w-full max-w-[240px] md:order-none md:max-w-none md:justify-self-end">
+              <div className="border-t-2 border-oxide">
+                <Image
+                  src="/castle-portrait.webp"
+                  alt="Vox, a blond original character in a black hooded jacket with red accents. Voxxai uses this drawing as an avatar."
+                  width={900}
+                  height={900}
+                  priority
+                  sizes="(max-width: 768px) 240px, 300px"
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="mt-3 font-serif text-[0.98rem] italic leading-snug text-mute">
+                Vox. The drawing I use instead of a photo.
+              </figcaption>
+            </figure>
+          </section>
+
+          <Section
+            id="work"
+            title="Work"
+            lede="Two public builds. Both archived. The source is open, no account needed."
+          >
+            <ProjectList />
+          </Section>
+
+          <Section id="about" title="About">
+            <div className="max-w-measure space-y-4">
+              <p className="font-serif text-xl leading-snug">
+                I graduated in Computer Science at Hogeschool Rotterdam and now
+                build software professionally.
+              </p>
+              <p className="text-mute">
+                I like code that is still readable six months later, and
+                interfaces that get out of the way. Most of the real choices
+                sit between the frontend and the database.
+              </p>
+              <p className="text-mute">
+                Away from the job: games, hardware, anime, music with an
+                unreasonable BPM, and a Raspberry Pi collecting jobs it
+                wasn&apos;t bought for. I stream on Twitch.
+              </p>
+            </div>
+          </Section>
+
+          <Section
+            id="toolkit"
+            title="Toolkit"
+            lede="What I reach for when something has to ship. It moves when the problem does."
+          >
+            <IndexList
+              rows={skillsByCategory.map((group) => ({
+                label: group.category,
+                detail: group.items.join(", "),
+              }))}
+            />
+          </Section>
+
+          <Section id="elsewhere" title="Elsewhere">
+            <IndexList rows={elsewhere} />
+          </Section>
+
+          <Section
+            id="contact"
+            title="Contact"
+            lede="Code, a project, or a homelab idea that is already a bit cursed."
+          >
+            <p>
+              <TextLink
+                href={`mailto:${identity.email}`}
+                className="font-serif text-[clamp(1.45rem,3vw,2.15rem)] leading-tight [overflow-wrap:anywhere]"
+              >
+                {identity.email}
+              </TextLink>
+            </p>
+            <ul className="m-0 mt-6 flex list-none flex-wrap gap-x-6 p-0">
+              {profiles
+                .filter((profile) => !profile.href.startsWith("mailto:"))
+                .map((profile) => (
+                  <li key={profile.href}>
+                    <TextLink href={profile.href} className="inline-flex min-h-11 items-center">
+                      {profile.label}
+                    </TextLink>
+                  </li>
+                ))}
+            </ul>
+          </Section>
+        </main>
+
+        <footer className="mt-4 flex flex-wrap items-center gap-x-6 border-t border-line py-6 text-sm text-mute">
+          <span>© {new Date().getFullYear()} Voxxai</span>
+          <span>Designed and built by Voxxai</span>
+          <a
+            href="#top"
+            className="inline-flex min-h-11 items-center text-paper no-underline hover:text-brass"
+          >
+            Back to top
+          </a>
+          <a
+            href="/privacy.html"
+            lang="nl"
+            className="inline-flex min-h-11 items-center text-paper underline decoration-oxide decoration-1 underline-offset-[0.22em] hover:text-brass"
+          >
+            Privacy &amp; cookies
+          </a>
+        </footer>
+      </div>
     </div>
   );
 }
