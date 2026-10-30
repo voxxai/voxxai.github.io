@@ -55,7 +55,7 @@ export default function HomePage() {
     <div className="site-shell">
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Voxxai, back to top">
-          voxxai<span className="wordmark-mark">//</span>
+          voxxai<span className="wordmark-mark">{"//"}</span>
         </a>
 
         <nav className="site-nav" aria-label="Primary navigation">
@@ -74,19 +74,18 @@ export default function HomePage() {
           <div className="hero-copy">
             <p className="section-label">01 / GILIAN</p>
             <h1 id="hero-title">
-              Build it. Break it.
-              <span>Build it better.</span>
+              Build it. Play it.
+              <span>Build it louder.</span>
             </h1>
             <p className="hero-intro">
-              Software Engineer with a soft spot for the machinery behind the
-              UI: APIs, authentication, architecture, data flows and
-              automation. I build things I need, things I want to understand
-              and occasionally things that should have taken five minutes.
+              Software engineer with a soft spot for the machinery behind the
+              UI: APIs, auth, data, and the automation that should have been
+              a button. I build what I need, then I queue a game or go live.
             </p>
 
             <div className="hero-actions">
               <a className="button button-primary" href="#work">
-                See selected work
+                See the builds
                 <ArrowDownRight aria-hidden="true" size={18} />
               </a>
               <ExternalLink
@@ -100,7 +99,7 @@ export default function HomePage() {
             <dl className="quick-facts">
               <div>
                 <dt>Focus</dt>
-                <dd>Backend · auth · automation</dd>
+                <dd>APIs · auth · deploys</dd>
               </div>
               <div>
                 <dt>Based</dt>
@@ -138,10 +137,10 @@ export default function HomePage() {
           <div className="section-heading">
             <div>
               <p className="section-label">02 / SELECTED WORK</p>
-              <h2>Useful builds, not filler.</h2>
+              <h2>Real builds. No filler.</h2>
             </div>
             <p>
-              A small public archive: two earlier builds.
+              Two earlier builds, both archived.
               Every source link opens without an account.
             </p>
           </div>
@@ -205,25 +204,23 @@ export default function HomePage() {
         <section className="about-section section-frame" id="about">
           <div className="about-lead">
             <p className="section-label">03 / ABOUT</p>
-            <h2>Engineer by trade. Tinkerer by default.</h2>
+            <h2>Engineer by trade. Gamer after hours.</h2>
           </div>
           <div className="about-copy">
             <p className="about-statement">
-              I&apos;m Gilian, better known online as Voxxai. I graduated in
-              Computer Science at Hogeschool Rotterdam and now build software
-              professionally.
+              I&apos;m Gilian, better known online as Voxxai. Computer Science
+              at Hogeschool Rotterdam, and I build software for a living now.
             </p>
             <div className="about-columns">
               <p>
-                I like code that is readable, interfaces that get out of the
-                way and systems that remain understandable six months later.
-                My work sits between frontend, backend and the product choices
-                connecting both.
+                I like code that still reads in six months, and interfaces
+                that stay out of the way. The real choices sit between the
+                screen, the API, and the database.
               </p>
               <p>
-                Away from work, you&apos;ll usually find me gaming, keeping an eye
-                on new hardware and AI, or turning my Raspberry Pi into one
-                more thing it probably wasn&apos;t bought for.
+                Off the clock it&apos;s games, Twitch, hardware, and a Raspberry
+                Pi doing jobs it was not bought for. The playlist only counts
+                at an unreasonable BPM.
               </p>
             </div>
           </div>
@@ -236,8 +233,8 @@ export default function HomePage() {
               <h2>What I reach for.</h2>
             </div>
             <p>
-              The stack changes with the problem. These are the tools and
-              patterns I&apos;m most comfortable shipping with today.
+              The stack changes with the problem. These are the tools I
+              actually reach for when something has to ship.
             </p>
           </div>
 
@@ -258,11 +255,11 @@ export default function HomePage() {
           <div className="signal-heading">
             <div>
               <p className="section-label">05 / OFF-SCREEN SIGNAL</p>
-              <h2>The rest of the operating system.</h2>
+              <h2>The tabs that are not code.</h2>
             </div>
             <p>
-              Code is only one tab. The others usually contain a Docker log,
-              a game, a hardware rabbit hole or music at an unreasonable BPM.
+              Code is one tab. The others are a Docker log, a game, a Twitch
+              window, or music at an unreasonable BPM.
             </p>
           </div>
 
@@ -281,7 +278,7 @@ export default function HomePage() {
               <article>
                 <span>AUDIO_03</span>
                 <h3>High BPM only</h3>
-                <p>Hardcore · Frenchcore · Uptempo</p>
+                <p>Hardstyle · Hardcore · Frenchcore · Uptempo</p>
               </article>
               <article>
                 <span>RADAR_04</span>
@@ -295,11 +292,11 @@ export default function HomePage() {
         <section className="contact-section section-frame" id="contact">
           <p className="section-label">06 / SAY HELLO</p>
           <div className="contact-layout">
-            <h2>Got something worth building?</h2>
+            <h2>Got a build, or a bad idea?</h2>
             <div className="contact-copy">
               <p>
-                If you want to talk code, a project, or a particularly cursed
-                homelab idea, my inbox is open.
+                Code, a project, or a homelab idea that is already a bit
+                cursed. The inbox is open.
               </p>
               <a className="email-link" href="mailto:contact@voxxai.dev">
                 contact@voxxai.dev

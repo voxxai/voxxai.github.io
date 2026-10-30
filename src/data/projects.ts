@@ -10,7 +10,7 @@ export const projects: RepoCard[] = [
   {
     name: "ProjectC",
     description:
-      "Full-stack school platform (CRA + Node/Express/MySQL) covering events, news, profiles, and 2FA-secured auth.",
+      "School platform, full stack: events, news, profiles, and a login with 2FA. CRA, Node, Express, MySQL.",
     html_url: "https://github.com/voxxai/ProjectC",
     language: "JavaScript",
     archived: true,
@@ -18,7 +18,7 @@ export const projects: RepoCard[] = [
   {
     name: "Django_Project",
     description:
-      "Learning project in Django/Python with CRUD patterns and classic Django templating/auth flows.",
+      "A Django learning build: CRUD, classic templates, and Django's own auth flows.",
     html_url: "https://github.com/voxxai/Django_Project",
     language: "Python",
     archived: true,

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | voxxai",
   },
   description:
-    "Portfolio of Gilian (voxxai), a software engineer building web apps, APIs and product systems.",
+    "Gilian (Voxxai), software engineer. Web apps and APIs by day, games and streams after.",
   keywords: [
     "voxxai",
     "Full-Stack Developer",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "voxxai — Software Engineer",
     description:
-      "Gilian builds web apps, APIs and product systems.",
+      "Gilian, online as Voxxai. Software engineer, gamer, occasional stream.",
     type: "website",
     locale: "en_US",
     siteName: "voxxai Portfolio",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "voxxai — Software Engineer",
     description:
-      "Gilian builds web apps, APIs and product systems.",
+      "Gilian, online as Voxxai. Software engineer, gamer, occasional stream.",
   },
   icons: {
     icon: [
