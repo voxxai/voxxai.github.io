@@ -56,7 +56,7 @@ Discord embed color integer: `0xff1f3d`.
 | Surface | Brand rule |
 |---|---|
 | GitHub profile | Voxxai name, VOX-colored stats cards, link to this doc |
-| voxxai.dev | Quieter reading site; type and color in DESIGN.md. themeColor `#161411`, favicon from `public/favicon.svg` |
+| voxxai.dev | Castle tokens above, themeColor `#0a0a0d`, favicon from `public/favicon.svg`. Type in DESIGN.md. |
 | linktree | Same tokens; Twitch tile keeps `twitch.tv/voxxxiee` |
 | Discord live | Title/content **Voxxai**; button URL from Twitch login |
 | OBS overlays | Tag `VOXXAI · the Castle`; URL panel shows real Twitch login |

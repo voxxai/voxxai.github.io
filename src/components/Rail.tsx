@@ -4,8 +4,8 @@ import { TextLink } from "@/components/TextLink";
 export function Rail() {
   return (
     <header className="sticky top-0 z-20 border-b border-line bg-ink py-5 md:flex md:h-screen md:max-h-screen md:flex-col md:self-start md:overflow-y-auto md:border-b-0 md:border-r md:py-8 md:pr-6">
-      <a href="#top" className="font-serif text-[1.7rem] leading-none text-paper no-underline">
-        voxxai
+      <a href="#top" className="font-serif text-[1.7rem] leading-none text-fg no-underline">
+        voxxai<span className="text-signal">{"//"}</span>
       </a>
       <p className="mt-3 text-sm leading-5 text-mute">
         <span className="md:block">{identity.role}</span>
@@ -21,7 +21,7 @@ export function Rail() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="inline-flex min-h-11 items-center text-paper no-underline hover:text-brass"
+                className="inline-flex min-h-11 items-center text-fg no-underline hover:text-signal"
               >
                 {item.label}
               </a>

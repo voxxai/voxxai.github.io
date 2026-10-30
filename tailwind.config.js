@@ -4,12 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#161411",
-        paper: "#f3efe6",
-        mute: "#b7ad9f",
-        brass: "#e0c27a",
-        oxide: "#f0a598",
-        line: "rgba(243, 239, 230, 0.16)",
+        ink: "#0a0a0d",
+        fg: "#f5f6fb",
+        mute: "#a1a8b8",
+        signal: "#ff1f3d",
+        gold: "#e8b84a",
+        line: "rgba(221, 229, 255, 0.16)",
       },
       fontFamily: {
         sans: [

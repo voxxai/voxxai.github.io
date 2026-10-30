@@ -37,7 +37,7 @@ export default function HomePage() {
               <p className="mt-6">
                 <a
                   href="#work"
-                  className="underline decoration-oxide decoration-1 underline-offset-[0.22em] hover:text-brass"
+                  className="underline decoration-signal decoration-1 underline-offset-[0.22em] hover:text-signal"
                 >
                   See the work
                 </a>
@@ -45,7 +45,7 @@ export default function HomePage() {
             </div>
 
             <figure className="order-1 w-full max-w-[240px] md:order-none md:max-w-none md:justify-self-end">
-              <div className="border-t-2 border-oxide">
+              <div className="border-t-2 border-signal">
                 <Image
                   src="/castle-portrait.webp"
                   alt="Vox, a blond original character in a black hooded jacket with red accents. Voxxai uses this drawing as an avatar."
@@ -138,14 +138,14 @@ export default function HomePage() {
           <span>Designed and built by Voxxai</span>
           <a
             href="#top"
-            className="inline-flex min-h-11 items-center text-paper no-underline hover:text-brass"
+            className="inline-flex min-h-11 items-center text-fg no-underline hover:text-signal"
           >
             Back to top
           </a>
           <a
             href="/privacy.html"
             lang="nl"
-            className="inline-flex min-h-11 items-center text-paper underline decoration-oxide decoration-1 underline-offset-[0.22em] hover:text-brass"
+            className="inline-flex min-h-11 items-center text-fg underline decoration-signal decoration-1 underline-offset-[0.22em] hover:text-signal"
           >
             Privacy &amp; cookies
           </a>

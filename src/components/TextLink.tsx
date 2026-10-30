@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 const linkClass =
-  "underline decoration-oxide decoration-1 underline-offset-[0.22em] hover:text-brass";
+  "underline decoration-signal decoration-1 underline-offset-[0.22em] hover:text-signal";
 
 export function TextLink({
   href,

@@ -1,24 +1,27 @@
-# voxxai.dev — reading site
+# voxxai.dev
 
-The stream overlays can stay loud. This site is the quiet version of the same person: warm black, paper-colored type, one red rule, brass for focus and hover.
+Same castle as the stream: ink, signal red, gold. Quieter than the overlays. The drawing already has the grid, so the page does not add another one.
+
+## Color
+
+Canonical tokens from BRAND.md:
+
+- Ink `#0a0a0d`, text `#f5f6fb`, muted `#a1a8b8`.
+- Red `#ff1f3d` for the wordmark slash, underlines, link hover, and the rule above the portrait.
+- Gold `#e8b84a` for focus and text selection.
+- Dividers are a cool hairline, `rgba(221, 229, 255, 0.16)`.
+- No glow, no gradient, no background grid.
 
 ## Type
 
 - Headlines, the name, project titles, and the email: Source Serif 4.
 - Everything else: Familjen Grotesk.
-- Both are self-hosted with `next/font`. No runtime Google Fonts request.
-
-## Color
-
-- Ink `#161411`, paper `#f3efe6`, muted `#b7ad9f`.
-- Oxide `#f0a598` for underlines and the single rule above the portrait.
-- Brass `#e0c27a` for hover, focus, and selection.
-- No second accent, no glow, no grid, no gradient.
+- Stream overlays keep Orbitron. Both site fonts are self-hosted with `next/font`.
 
 ## Layout
 
 - A left rail (name, place, section links, profiles) and one reading column.
-- The portrait sits beside the intro on wide screens and above it on narrow ones. It is the only image.
+- The portrait sits beside the intro on wide screens and above it on narrow ones.
 - Sections are a heading plus prose or a plain index. No cards, no icon grids, no numbered labels.
 
 ## Voice

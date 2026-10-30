@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Familjen_Grotesk, Source_Serif_4 } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const sans = Familjen_Grotesk({
@@ -65,7 +63,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#161411",
+  themeColor: "#0a0a0d",
   colorScheme: "dark",
 };
 
@@ -80,13 +78,11 @@ export default function RootLayout({
       className={`${sans.variable} ${serif.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-ink font-sans text-[1.0625rem] leading-7 text-paper antialiased">
+      <body className="bg-ink font-sans text-[1.0625rem] leading-7 text-fg antialiased">
         <a className="skip-link" href="#content">
           Skip to content
         </a>
         {children}
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
