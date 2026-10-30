@@ -48,13 +48,14 @@ Discord embed color integer: `0xff1f3d`.
 - Primary avatar: hooded blond OC (castle portrait / `voxxai-pfp`)
 - Prefer square pfp + wide banner in Castle red/gold on ink
 - Wordmark: lowercase `voxxai` with accent slash `//` or `/LINKS`
+- Favicon: ink ground (`#0a0a0d`) and the VOX wordmark V. White fill with horizontal scanlines, a red glitch offset (`#ff1f3d`) on the left edge, and a cyan glitch offset (`#45d4e8`) on the right edge. Source: `public/favicon.svg`
 
 ## Surface checklist
 
 | Surface | Brand rule |
 |---|---|
 | GitHub profile | Voxxai name, VOX-colored stats cards, link to this doc |
-| voxxai.dev | CSS tokens above, themeColor ink |
+| voxxai.dev | CSS tokens above, themeColor ink, favicon from `public/favicon.svg` |
 | linktree | Same tokens; Twitch tile keeps `twitch.tv/voxxxiee` |
 | Discord live | Title/content **Voxxai**; button URL from Twitch login |
 | OBS overlays | Tag `VOXXAI · the Castle`; URL panel shows real Twitch login |
