@@ -1,8 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
   <title id="title">VOX</title>
-  <!-- Castle favicon: ink #0a0a0d, V #f5f6fb, red bar #ff1f3d, gold bar #e8b84a. -->
-  <rect width="16" height="16" fill="#0a0a0d"/>
-  <path fill="#f5f6fb" d="M1 1 H5 L8 7 L11 1 H15 L9 10 H7 Z"/>
-  <rect x="1" y="11" width="14" height="2" fill="#ff1f3d"/>
-  <rect x="1" y="14" width="14" height="2" fill="#e8b84a"/>
+  <!-- VOX wordmark V. Ink #0a0a0d, white scanlines, red glitch #ff1f3d, cyan glitch #45d4e8. -->
+  <rect width="64" height="64" fill="#0a0a0d"/>
+  <defs>
+    <mask id="scan" maskUnits="userSpaceOnUse">
+      <rect width="64" height="64" fill="#000"/>
+    <rect x="0" y="11.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="12.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="13.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="15.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="16.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="17.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="18.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="20.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="21.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="22.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="23.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="25.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="26.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="27.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="28.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="30.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="31.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="32.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="33.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="35.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="36.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="37.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="38.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="40.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="41.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="42.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="43.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="45.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="46.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="47.56" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="48.81" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="50.06" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="51.31" width="64" height="1.07" fill="#fff"/>
+    <rect x="0" y="52.56" width="64" height="1.07" fill="#fff"/>
+    </mask>
+  </defs>
+  <g mask="url(#scan)">
+    <path d="M28.52 51.44L6.0 12.56L15.72 12.56L32.03 40.8L48.33 12.56L58.0 12.56L35.48 51.44Z" fill="#ff1f3d" transform="translate(-1.5 0)"/>
+    <path d="M28.52 51.44L6.0 12.56L15.72 12.56L32.03 40.8L48.33 12.56L58.0 12.56L35.48 51.44Z" fill="#45d4e8" transform="translate(1.5 0)"/>
+    <path d="M28.52 51.44L6.0 12.56L15.72 12.56L32.03 40.8L48.33 12.56L58.0 12.56L35.48 51.44Z" fill="#ffffff"/>
+  </g>
 </svg>

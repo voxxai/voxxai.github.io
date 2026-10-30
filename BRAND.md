@@ -48,7 +48,7 @@ Discord embed color integer: `0xff1f3d`.
 - Primary avatar: hooded blond OC (castle portrait / `voxxai-pfp`)
 - Prefer square pfp + wide banner in Castle red/gold on ink
 - Wordmark: lowercase `voxxai` with accent slash `//` or `/LINKS`
-- Favicon: ink ground (`#0a0a0d`), white V-mark (`#f5f6fb`), and bars in `--vox-red` (`#ff1f3d`) and `--vox-gold` (`#e8b84a`). Source: `public/favicon.svg`
+- Favicon: ink ground (`#0a0a0d`) and the VOX wordmark V. White fill with horizontal scanlines, a red glitch offset (`#ff1f3d`) on the left edge, and a cyan glitch offset (`#45d4e8`) on the right edge. Source: `public/favicon.svg`
 
 ## Surface checklist
 
