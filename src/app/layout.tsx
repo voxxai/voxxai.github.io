@@ -1,52 +1,55 @@
-import type { Metadata, Viewport } from "next";
-import { Familjen_Grotesk, Source_Serif_4 } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next";
+import { Chakra_Petch, Orbitron } from "next/font/google";
+import "../index.css";
 
-const sans = Familjen_Grotesk({
+const orbitron = Orbitron({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-sans",
+  weight: ["500", "700", "900"],
+  variable: "--font-orbitron",
   display: "swap",
 });
 
-const serif = Source_Serif_4({
+const chakra = Chakra_Petch({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-chakra",
   display: "swap",
 });
-
-const description =
-  "Gilian (Voxxai), a software engineer in the Netherlands. TypeScript, React, Next.js, Laravel, and Postgres.";
 
 export const metadata: Metadata = {
   title: {
-    default: "Voxxai — Software engineer",
-    template: "%s | Voxxai",
+    default: "voxxai — Software Engineer",
+    template: "%s | voxxai",
   },
-  description,
-  authors: [{ name: "Voxxai" }],
-  creator: "Voxxai",
+  description:
+    "Gilian (Voxxai), software engineer. Web apps and APIs by day, games and streams after.",
+  keywords: [
+    "voxxai",
+    "Full-Stack Developer",
+    "React Developer",
+    "TypeScript",
+    "Web Development",
+    "Frontend Engineer",
+    "Portfolio",
+    "Voxxai",
+    "VOX",
+    "Castle",
+  ],
+  authors: [{ name: "voxxai" }],
+  creator: "voxxai",
   openGraph: {
-    title: "Voxxai — Software engineer",
-    description,
+    title: "voxxai — Software Engineer",
+    description:
+      "Gilian, online as Voxxai. Software engineer, gamer, occasional stream.",
     type: "website",
     locale: "en_US",
-    siteName: "Voxxai",
-    url: "https://voxxai.dev",
-    images: [
-      {
-        url: "/castle-portrait.webp",
-        alt: "Vox, the original character Voxxai uses as an avatar",
-      },
-    ],
+    siteName: "voxxai Portfolio",
   },
   twitter: {
     card: "summary",
-    title: "Voxxai — Software engineer",
-    description,
-    images: ["/castle-portrait.webp"],
+    title: "voxxai — Software Engineer",
+    description:
+      "Gilian, online as Voxxai. Software engineer, gamer, occasional stream.",
   },
   icons: {
     icon: [
@@ -60,10 +63,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://voxxai.dev"),
 };
 
-export const viewport: Viewport = {
+export const viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0d",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0d" },
+    { media: "(prefers-color-scheme: light)", color: "#0a0a0d" },
+  ],
   colorScheme: "dark",
 };
 
@@ -73,15 +79,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${sans.variable} ${serif.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="bg-ink font-sans text-[1.0625rem] leading-7 text-fg antialiased">
-        <a className="skip-link" href="#content">
-          Skip to content
-        </a>
+    <html lang="en" className={`${orbitron.variable} ${chakra.variable}`} suppressHydrationWarning>
+      <head />
+      <body>
         {children}
       </body>
     </html>

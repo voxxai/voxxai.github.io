@@ -1,36 +1,43 @@
-# voxxai.dev
+# voxxai visual system — Castle
 
-Same castle as the stream: ink, signal red, gold. Quieter than the overlays. The drawing already has the grid, so the page does not add another one.
+## Thesis
 
-## Color
+The portfolio wears the same "castle" identity as the Vox stream overlays:
+a dark keep at night, lit by red signal light and gold trim. It should feel
+like the stream's home base, not a cyberpunk dashboard or a generic SaaS page.
 
-Canonical tokens from BRAND.md:
+## Tokens
 
-- Ink `#0a0a0d`, text `#f5f6fb`, muted `#a1a8b8`.
-- Red `#ff1f3d` for the wordmark slash, underlines, link hover, and the rule above the portrait.
-- Gold `#e8b84a` for focus and text selection.
-- Dividers are a cool hairline, `rgba(221, 229, 255, 0.16)`.
-- No glow, no gradient, no background grid.
+- Background `#0A0A0D`, raised panels `#121217`, text `#F5F6FB`, muted `#A1A8B8`.
+- Red `#FF1F3D` (primary signal, CTAs, labels), deep red `#B0001C`, gold `#E8B84A`
+  (secondary accents, focus ring, selection). No other signal colours.
+- Headings: Orbitron (500/700/900). Body, labels and UI: Chakra Petch.
+  Both are self-hosted via `next/font` at build time — no runtime Google Fonts
+  request (see PRIVACY_REVIEW.md).
+- Corners: cut corners (`--cut: 14px`) on buttons, the portrait and key panels.
+- Background: a faint 48 px red grid with a soft red glow at the top.
 
-## Type
+## Rules
 
-- Headlines, the name, project titles, and the email: Source Serif 4.
-- Everything else: Familjen Grotesk.
-- Stream overlays keep Orbitron. Both site fonts are self-hosted with `next/font`.
+- Let typography, spacing and hard dividers create hierarchy; Orbitron is wide,
+  so keep heading sizes smaller and letter-spacing near zero.
+- Red glow only as feedback (hover/focus on CTAs and cards) or on one hero word —
+  never as background blobs.
+- Use the Vox OC portrait (`/castle-portrait.webp`) once, as identity.
+- Write concrete copy in Gilian's voice. No claims such as "innovative" or "world-class".
+- No surname or hometown anywhere except the privacy notice.
+- Projects must have a public, unauthenticated source URL before appearing as public work.
+- Prefer editorial rows and asymmetric composition over repeated icon-card grids.
+- Motion is user-triggered feedback, 100–220 ms, and respects `prefers-reduced-motion`.
+- Text contrast meets WCAG AA (red `#FF1F3D` on `#0A0A0D` ≈ 5:1; dark text on red/gold buttons).
 
-## Layout
+## Never add
 
-- A left rail (name, place, section links, profiles) and one reading column.
-- The portrait sits beside the intro on wide screens and above it on narrow ones.
-- Sections are a heading plus prose or a plain index. No cards, no icon grids, no numbered labels.
-
-## Voice
-
-- Short, first person, specific. Gilian in prose, Voxxai as the public name.
-- No surname and no hometown or city, including metadata and social images. The school name stays as written.
-- No invented projects, jobs, stats, or testimonials.
-
-## Motion
-
-- Color change on hover, about 150ms. Nothing moves on load.
-- `prefers-reduced-motion` turns the color change and smooth scroll off.
+- purple-to-cyan glow blobs or the old blue/pink/lime palette;
+- glassmorphism panels;
+- generic three-card feature rows;
+- fake terminal windows;
+- decorative dashboards or made-up metrics;
+- auto-playing entrance animations or looping glitch effects (those stay on stream);
+- stock imagery or generated UI screenshots;
+- multiple competing call-to-action styles.

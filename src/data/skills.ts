@@ -1,33 +1,22 @@
 export const skillsByCategory: { category: string; items: string[] }[] = [
   {
     category: "Languages",
-    items: [
-      "TypeScript",
-      "JavaScript",
-      "PHP",
-      "Python",
-      "C#",
-      "Rust (learning, via Tauri)",
-    ],
+    items: ["TypeScript", "JavaScript", "C#", "Python", "PHP", "Rust (learning)"],
   },
   {
-    category: "Interface",
+    category: "Frontend",
     items: ["React", "Next.js", "Tailwind", "HTML", "CSS", "Accessibility"],
   },
   {
-    category: "Server",
-    items: ["Laravel", "Node.js", ".NET", "REST", "Authentication"],
+    category: "Backend",
+    items: ["Node.js", "Laravel", ".NET", "REST APIs", "Authentication"],
   },
   {
-    category: "Data",
-    items: ["PostgreSQL", "Prisma", "MySQL"],
+    category: "Data & architecture",
+    items: ["PostgreSQL", "MySQL", "Data flows", "System design", "Automation"],
   },
   {
-    category: "Shipping",
-    items: ["Docker", "GitHub Actions", "Linux", "Git"],
-  },
-  {
-    category: "Also",
-    items: ["Raspberry Pi", "Azure", "AWS"],
+    category: "Systems",
+    items: ["Docker", "Linux", "Git / GitHub", "Raspberry Pi", "Azure", "AWS"],
   },
 ];
