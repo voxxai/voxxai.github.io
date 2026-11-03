@@ -13,7 +13,7 @@ project and contact information available directly through the fixed header.
    Uriel is the user's main. Explicitly not presented as their own Fashionframe.
 4. **Jinx** — user-supplied Arcane portrait, ink / cyan / magenta, rough drawn
    accents. Jinx remains a favourite; C.C. is omitted. Vox is a separate OC.
-5. **The soundtrack** — interactive U2, live blues and hardcore / uptempo themes.
+5. **The soundtrack** — interactive hardcore / uptempo (default, first choice) and U2 themes.
    Typographic record artwork, not fabricated album covers or a listening widget.
 6. **Behind Voxxai** — Computer Science graduation in 2026, current role at
    Spaux, home Pi / Discord / Twitch bots, signature and contact.
