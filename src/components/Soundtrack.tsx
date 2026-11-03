@@ -1,16 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const sounds = [
-  { id: "uptempo", label: "Hardcore & uptempo", title: "Turn it up.", kicker: "My first choice.", description: "Hardcore, frenchcore and uptempo. This is what I listen to most. Krowdexx, GPF, Yoshiko and Deadly Guns are right at home here.", note: "Hardcore / frenchcore / uptempo", mark: "BPM+" },
-  { id: "u2", label: "U2", title: "U2", kicker: "Next in the rotation.", description: "After hardcore and uptempo, it's U2. A favourite I keep coming back to, with their own place in my music collection and stream playlists.", note: "Rock / U2", mark: "U2" },
+  { id: "uptempo", label: "Hardcore & uptempo", title: "GPF.", kicker: "My first choice.", description: "Hardcore, frenchcore and uptempo are what I listen to most. GPF is my favourite. Krowdexx, Yoshiko and Deadly Guns are in the rotation too.", note: "Favourite artist / GPF", image: "/gpf-live.webp", alt: "GPF on stage in a pink outfit in front of a festival crowd", caption: "GPF / HARDCORE & UPTEMPO" },
+  { id: "u2", label: "U2", title: "U2", kicker: "Next in the rotation.", description: "After hardcore and uptempo, it's U2. A favourite I keep coming back to, with their own place in my music collection and stream playlists.", note: "Rock / U2", image: "/u2-live.webp", alt: "U2 performing on stage under blue lights", caption: "U2 / NEXT IN THE ROTATION" },
 ] as const;
 
 export function Soundtrack() {
   const [selected, setSelected] = useState(0);
   const sound = sounds[selected];
   return <div className="soundtrack-layout" data-sound={sound.id}>
+    <div className="sound-photo" key={sound.id}>
+      <Image src={sound.image} alt={sound.alt} fill sizes="100vw" />
+    </div>
     <div className="soundtrack-copy">
       <p className="chapter-kicker">05 / The soundtrack</p>
       <div className="sound-picker" role="group" aria-label="Choose a music style">
@@ -24,9 +28,9 @@ export function Soundtrack() {
         <p className="scene-note">{sound.note}</p>
       </div>
     </div>
-    <div className="sound-art" key={sound.id} aria-hidden="true">
-      <div className="record-grooves" />
-      <div className="sound-poster"><span>VOXXAI / THE ROTATION</span><strong>{sound.mark}</strong><div className="sound-bars">{Array.from({length: 18}, (_,i)=><i key={i} style={{"--bar": `${20 + (i * 37 % 75)}%`, "--delay": `${i * 18}ms`} as React.CSSProperties} />)}</div><span>HARDCORE / UPTEMPO / U2</span></div>
+    <div className="sound-photo-caption" aria-hidden="true">
+      <span>{sound.caption}</span>
+      <div className="sound-bars" key={sound.id}>{Array.from({length: 18}, (_,i)=><i key={i} style={{"--bar": `${20 + (i * 37 % 75)}%`, "--delay": `${i * 18}ms`} as React.CSSProperties} />)}</div>
     </div>
   </div>;
 }

@@ -13,6 +13,7 @@ export function PortfolioExperience({ children }: { children: ReactNode }) {
   const [chaos, setChaos] = useState(false);
   const [reduced, setReduced] = useState(true);
   const trail = useRef<HTMLDivElement>(null);
+  const impacts = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -60,13 +61,43 @@ export function PortfolioExperience({ children }: { children: ReactNode }) {
     };
   }, [chaos, reduced]);
 
+  useEffect(() => {
+    if (!chaos || reduced || !impacts.current) return;
+    const fragments = Array.from(impacts.current.children) as HTMLElement[];
+    let last = 0;
+    const burst = (event: globalThis.PointerEvent) => {
+      if (performance.now() - last < 400) return;
+      last = performance.now();
+      fragments.forEach((fragment, index) => {
+        fragment.getAnimations().forEach((animation) => animation.cancel());
+        fragment.style.left = `${event.clientX}px`;
+        fragment.style.top = `${event.clientY}px`;
+        const angle = index * Math.PI * 2 / fragments.length;
+        const distance = 45 + index % 3 * 20;
+        fragment.animate([
+          { opacity: .8, transform: "translate(-50%, -50%) scale(1) rotate(0deg)" },
+          { opacity: 0, transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(.2) rotate(${index * 45}deg)` },
+        ], { duration: 520, easing: "cubic-bezier(.1,.7,.2,1)" });
+      });
+    };
+    window.addEventListener("pointerdown", burst, { passive: true });
+    return () => {
+      window.removeEventListener("pointerdown", burst);
+      fragments.forEach((fragment) => fragment.getAnimations().forEach((animation) => animation.cancel()));
+    };
+  }, [chaos, reduced]);
+
   return (
     <ExperienceContext.Provider value={{ chaos, reduced, toggle: () => setChaos((value) => !value) }}>
       {children}
       <div className="chaos-sweep" aria-hidden="true" />
       <div className="cursor-trail" ref={trail} aria-hidden="true">
-        {Array.from({ length: 10 }, (_, index) => <i key={index} />)}
+        {Array.from({ length: 18 }, (_, index) => <i key={index} />)}
       </div>
+      <div className="chaos-impacts" ref={impacts} aria-hidden="true">
+        {Array.from({ length: 12 }, (_, index) => <i key={index} />)}
+      </div>
+      <div className="chaos-atmosphere" aria-hidden="true"><i /><i /><i /><span>VOX / CHAOS</span></div>
     </ExperienceContext.Provider>
   );
 }
@@ -127,7 +158,7 @@ export function AnimatedName() {
     letter.getAnimations().forEach((animation) => animation.cancel());
     letter.animate([
       { transform: "translate(0, 0) rotate(0)" },
-      { transform: `translate(${index % 2 ? 7 : -7}px, -14px) rotate(${index % 2 ? 9 : -9}deg)` },
+      { transform: `translate(${index % 2 ? 14 : -14}px, -28px) rotate(${index % 2 ? 18 : -18}deg)` },
       { transform: "translate(0, 3px) rotate(0)" },
       { transform: "translate(0, 0) rotate(0)" },
     ], { duration: 450, easing: "ease-out" });
@@ -164,8 +195,8 @@ export function TiltPanel({ children, className = "" }: { children: ReactNode; c
     <div ref={panel} className={`tilt-panel ${className}`} onPointerMove={(event) => {
       if (!chaos || reduced || event.pointerType !== "mouse") return;
       const rect = event.currentTarget.getBoundingClientRect();
-      event.currentTarget.style.setProperty("--tilt-x", `${((event.clientY - rect.top) / rect.height - 0.5) * -5}deg`);
-      event.currentTarget.style.setProperty("--tilt-y", `${((event.clientX - rect.left) / rect.width - 0.5) * 5}deg`);
+      event.currentTarget.style.setProperty("--tilt-x", `${((event.clientY - rect.top) / rect.height - 0.5) * -10}deg`);
+      event.currentTarget.style.setProperty("--tilt-y", `${((event.clientX - rect.left) / rect.width - 0.5) * 10}deg`);
     }} onPointerLeave={reset} onPointerCancel={reset} onPointerDown={(event) => {
       if (!chaos || reduced || event.pointerType === "mouse") return;
       event.currentTarget.style.setProperty("--tilt-x", "-2deg");

@@ -14,7 +14,8 @@ project and contact information available directly through the fixed header.
 4. **Jinx** — user-supplied Arcane portrait, ink / cyan / magenta, rough drawn
    accents. Jinx remains a favourite; C.C. is omitted. Vox is a separate OC.
 5. **The soundtrack** — interactive hardcore / uptempo (default, first choice) and U2 themes.
-   Typographic record artwork, not fabricated album covers or a listening widget.
+   User-supplied GPF and U2 concert photos switch with the selection. GPF is
+   the favourite artist; hardcore / uptempo remains first and default. No listening widget.
 6. **Behind Voxxai** — Computer Science graduation in 2026, current role at
    Spaux, home Pi / Discord / Twitch bots, signature and contact.
 
@@ -28,6 +29,8 @@ project and contact information available directly through the fixed header.
 - `public/uriel-reference.webp` and `public/jinx-arcane.webp` are optimised from
   the two user attachments supplied on 3 Nov 2026. Preserve the original scenes;
   use responsive crops and CSS overlays, not generated replacement characters.
+- `public/gpf-live.webp` and `public/u2-live.webp` are optimised copies of the
+  two concert images supplied by the user on 3 Nov 2026.
 - `public/lifequest-desktop.webp` is the reviewed empty development screenshot
   from LifeQuest's `docs/p5-screenshots/after-shell-desktop.png`.
 - No surname or hometown outside the existing privacy notice. No invented
@@ -35,18 +38,22 @@ project and contact information available directly through the fixed header.
 
 ## Navigation and motion
 
-- Native document scrolling; six sections with a minimum full viewport height.
-  Desktop uses proximity snapping. Mobile and reduced motion use ordinary scroll.
-  Tall content expands normally; no fixed-height content traps or wheel interception.
-- Direct chapter anchors, an active position rail, previous / next links and
-  Left / Right keys. Inputs and editable content keep their own keyboard behaviour.
+- With JavaScript enabled, use a fixed viewport stage with exactly one active
+  chapter. Crossfade / transform the layers; never leave a position between slides.
+  Inactive chapters are inert. Without JavaScript the document remains scrollable.
+- One wheel / trackpad gesture advances one chapter, with accumulation, a gesture
+  latch and a transition lock to prevent inertia skipping multiple chapters.
+  Vertical swipes, Left / Right, Page Up / Down, anchors and previous / next work.
+- Content taller than the viewport scrolls inside its own chapter before the next
+  gesture advances. Direct contact links open the final chapter and reveal contact.
 - Header links keep work and contact accessible without traversing every chapter.
 - Use static scanlines, one short clipped text glitch when a chapter enters,
-  gentle image settling and a finite ember reveal in the Uriel scene.
-- Chaos defaults off. Its switch adds stronger one-shot glitch feedback, the
-  pooled cursor particles, reactive name letters, interactive panel tilt and an
+  staggered copy entrances, gentle image settling and a finite ember reveal in the Uriel scene.
+- Chaos defaults off. Its switch adds recurring clipped glitch feedback, moving
+  scan bands, click / tap particle bursts, stronger scene colour, the
+  pooled cursor particles, larger reactive name letters, interactive panel tilt and an
   extra LifeQuest note. Escape restores the quiet state. Never autoplay audio.
-- Reduced motion removes snapping, smooth navigation, transitions and all animated
+- Reduced motion removes smooth navigation, transitions and all animated
   effects. Scene images and text remain visible. All content stays accessible.
 - Soundtrack choices use real buttons with pressed state and live text updates.
   Music favourites do not imply that anything is playing.
