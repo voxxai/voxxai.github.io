@@ -64,3 +64,12 @@ Discord embed color integer: `0xff1f3d`.
 ## After Twitch rename
 
 Replace remaining `voxxxiee` **URLs/handles** with `voxxai` everywhere (socials, overlays, OAuth copy, linktree Twitch tile). Display brand stays Voxxai.
+
+## Portfolio experience
+
+The portfolio presents six chapters: Voxxai, engineering, Uriel, Jinx / Arcane,
+music, and the person behind the brand. Castle red / gold remains the core.
+User-requested Uriel orange / ember and Jinx cyan / magenta accents are scoped
+to their chapters, including matching navigation accents. These scenes express
+Gilian's interests; Vox remains the original character and brand face. Uriel's
+reference artwork is not labelled as Gilian's own Fashionframe.

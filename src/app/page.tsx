@@ -1,329 +1,113 @@
 import Image from "next/image";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Github,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Github, Mail } from "lucide-react";
 import { projects } from "@/data/projects";
-import { skillsByCategory } from "@/data/skills";
-import { ChaosSwitch } from "@/components/ChaosSwitch";
+import { ExperienceNavigation } from "@/components/ExperienceNavigation";
+import { Soundtrack } from "@/components/Soundtrack";
+import { AnimatedName, ChaosSwitch, PortfolioExperience, ProjectNote, TiltPanel, Wordmark } from "@/components/PortfolioExperience";
 
-const mainLinks = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#signal", label: "Off-screen" },
-  { href: "#contact", label: "Contact" },
-];
+function ExternalLink({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) {
+  return <a href={href} target="_blank" rel="noreferrer" className={className}>{children}<ArrowUpRight aria-hidden="true" size={16} /></a>;
+}
 
-const projectMeta: Record<
-  string,
-  { kind: string; number: string; liveUrl?: string }
-> = {
-  ProjectC: { kind: "Archived school platform", number: "01" },
-  Django_Project: { kind: "Archived learning build", number: "02" },
-};
-
-function ExternalLink({
-  href,
-  children,
-  className = "",
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className={className}
-    >
-      {children}
-      <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />
-    </a>
-  );
+function GlitchTitle({ children, id, className = "" }: { children: string; id: string; className?: string }) {
+  return <h2 id={id} className={`glitch-title ${className}`}>{children}<span className="glitch-copy" aria-hidden="true">{children}</span></h2>;
 }
 
 export default function HomePage() {
-  const featuredProject = projects[0];
-  const otherProjects = projects.slice(1);
-
-  return (
-    <div className="site-shell">
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Voxxai, back to top">
-          voxxai<span className="wordmark-mark">//</span>
-        </a>
-
-        <nav className="site-nav" aria-label="Primary navigation">
-          {mainLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <span className="header-role">SOFTWARE ENGINEER · NL</span>
+  return <PortfolioExperience>
+    <div className="experience-shell">
+      <a className="skip-link" href="#work">Skip to projects</a>
+      <header className="experience-header">
+        <Wordmark />
+        <nav aria-label="Quick navigation"><a href="#work">Work</a><a href="#contact">Contact</a></nav>
+        <ChaosSwitch />
       </header>
-
-      <main id="top">
-        <section className="hero section-frame" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <p className="section-label">01 / GILIAN</p>
-            <h1 id="hero-title">
-              Build it. Break it.
-              <span>Build it better.</span>
-            </h1>
-            <p className="hero-intro">
-              Software Engineer with a soft spot for the machinery behind the
-              UI: APIs, authentication, architecture, data flows and
-              automation. I build things I need, things I want to understand
-              and occasionally things that should have taken five minutes.
-            </p>
-
-            <div className="hero-actions">
-              <a className="button button-primary" href="#work">
-                See selected work
-                <ArrowDownRight aria-hidden="true" size={18} />
-              </a>
-              <ExternalLink
-                href="https://github.com/voxxai"
-                className="button button-secondary"
-              >
-                GitHub
-              </ExternalLink>
+      <main id="main">
+        <section className="chapter chapter-intro" id="top" aria-labelledby="intro-title">
+          <div className="intro-grid chapter-inner">
+            <div className="intro-copy">
+              <p className="chapter-kicker">01 / Gilian. Online as Voxxai.</p>
+              <h1 id="intro-title">Software engineer.<AnimatedName /></h1>
+              <p className="chapter-description">I build software, run my own bots and spend plenty of time gaming. This is where it all comes together.</p>
+              <div className="chapter-actions"><a href="#work" className="button button-primary">Enter my world <ArrowDownRight size={18} aria-hidden="true" /></a><ExternalLink href="https://github.com/voxxai" className="text-link">GitHub</ExternalLink></div>
+              <p className="intro-signature">Gilian <span>/</span> Voxxai <span>/</span> VOX</p>
             </div>
-
-            <dl className="quick-facts">
-              <div>
-                <dt>Focus</dt>
-                <dd>Backend · auth · automation</dd>
-              </div>
-              <div>
-                <dt>Based</dt>
-                <dd>
-                  <MapPin aria-hidden="true" size={14} /> Netherlands
-                </dd>
-              </div>
-              <div>
-                <dt>Exploring</dt>
-                <dd>Rust · Linux · AI tooling</dd>
-              </div>
-            </dl>
+            <TiltPanel className="intro-portrait">
+              <div className="portrait-orbit" aria-hidden="true" />
+              <div className="intro-image"><Image src="/castle-portrait.webp" alt="Vox, the blond hooded original character I use for Voxxai" fill priority sizes="(max-width:760px) 90vw, 50vw" /></div>
+              <span className="portrait-tag">MY OC / MY ONLINE FACE</span>
+            </TiltPanel>
           </div>
-
-          <figure className="profile-block">
-            <div className="profile-offset" aria-hidden="true" />
-            <div className="profile-image-wrap">
-              <Image
-                src="/castle-portrait.webp"
-                alt="Vox, the blond hooded original character used as voxxai's avatar"
-                fill
-                priority
-                sizes="(max-width: 900px) 82vw, 420px"
-                className="profile-image"
-              />
-            </div>
-            <figcaption>
-              <span>voxxai</span>
-              <ChaosSwitch />
-            </figcaption>
-          </figure>
+          <span className="chapter-background-word" aria-hidden="true">VOX</span>
         </section>
 
-        <section className="work-section section-frame" id="work">
-          <div className="section-heading">
-            <div>
-              <p className="section-label">02 / SELECTED WORK</p>
-              <h2>Useful builds, not filler.</h2>
-            </div>
-            <p>
-              A small public archive: two earlier builds.
-              Every source link opens without an account.
-            </p>
-          </div>
-
-          <article className="featured-project">
-            <div className="project-index">
-              <span>{projectMeta[featuredProject.name]?.number}</span>
-              <span>{projectMeta[featuredProject.name]?.kind}</span>
-            </div>
-            <div className="featured-project-copy">
-              <div className="project-title-row">
-                <h3>{featuredProject.name}</h3>
-                <span className="status-badge">\n                  {featuredProject.archived ? "ARCHIVED" : "ACTIVE"}\n                </span>
+        <section className="chapter chapter-work" id="work" aria-labelledby="work-title">
+          <div className="chapter-inner">
+            <div className="work-heading"><div><p className="chapter-kicker">02 / The engineer</p><GlitchTitle id="work-title">Things I build.</GlitchTitle></div><p>Backends, authentication, automation.<br />And projects I can use myself.</p></div>
+            <TiltPanel className="work-feature">
+              <div className="work-copy">
+                <div className="project-topline"><span>Personal project</span><span className="status-badge">In development</span></div>
+                <h3>LifeQuest.</h3>
+                <p>I wanted a place to track habits, walks and health data. That became LifeQuest: a habit tracker I&apos;m building for web and mobile.</p>
+                <p>It&apos;s an early MVP, with personal habits, goals, progress logging and an installable PWA.</p>
+                <ul className="tech-list" aria-label="LifeQuest technologies"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li></ul>
+                <ProjectNote>I&apos;m building the tracker. Still have to do the walking myself.</ProjectNote>
+                <p className="private-source">Private source for now.</p>
               </div>
-              <p>{featuredProject.description}</p>
-              <div className="project-footer">
-                <span>{featuredProject.language}</span>
-                <div className="project-links">
-                  {projectMeta[featuredProject.name]?.liveUrl && (
-                    <ExternalLink
-                      href={projectMeta[featuredProject.name].liveUrl!}
-                      className="text-link"
-                    >
-                      Live app
-                    </ExternalLink>
-                  )}
-                  <ExternalLink
-                    href={featuredProject.html_url}
-                    className="text-link"
-                  >
-                    Source
-                  </ExternalLink>
-                </div>
+              <figure className="work-screenshot"><a href="/lifequest-desktop.webp" target="_blank" rel="noreferrer" aria-label="Open full LifeQuest screenshot in a new tab"><Image src="/lifequest-desktop.webp" alt="LifeQuest development dashboard with habit tracking and an empty health log" width={1440} height={900} sizes="(max-width:900px) 90vw, 55vw" /><span>Development build <ArrowUpRight size={14} aria-hidden="true" /></span></a></figure>
+            </TiltPanel>
+            <details className="work-archive"><summary>Earlier work &amp; my toolkit <span aria-hidden="true">+</span></summary>
+              <div className="archive-content">{projects.map(project=><article key={project.name}><div><span>Archived school project / {project.language}</span><h4>{project.displayName}</h4></div><p>{project.description}</p><ExternalLink href={project.html_url} className="text-link">Source</ExternalLink></article>)}
+                <p className="toolkit-copy">My usual tools: Next.js, TypeScript, Laravel, APIs, PostgreSQL, Docker, Linux and Git. I&apos;m also learning Rust.</p>
               </div>
-            </div>
-          </article>
-
-          <div className="project-list">
-            {otherProjects.map((project) => {
-              const meta = projectMeta[project.name];
-
-              return (
-                <ExternalLink
-                  key={project.name}
-                  href={project.html_url}
-                  className="project-row"
-                >
-                  <span className="project-number">{meta?.number}</span>
-                  <div>
-                    <span className="project-kind">{meta?.kind}</span>
-                    <h3>{project.name.replace("_", " ")}</h3>
-                  </div>
-                  <p>{project.description}</p>
-                  <span className="project-language">{project.language}</span>
-                </ExternalLink>
-              );
-            })}
+            </details>
           </div>
         </section>
 
-        <section className="about-section section-frame" id="about">
-          <div className="about-lead">
-            <p className="section-label">03 / ABOUT</p>
-            <h2>Engineer by trade. Tinkerer by default.</h2>
+        <section className="chapter chapter-uriel" id="warframe" aria-labelledby="uriel-title">
+          <div className="scene-image uriel-image"><Image src="/uriel-reference.webp" alt="Uriel standing in a fiery orange Warframe scene" fill sizes="100vw" /></div>
+          <div className="scene-shade" aria-hidden="true" />
+          <div className="ember-field" aria-hidden="true">{Array.from({length:12},(_,i)=><i key={i} style={{"--x":`${8+i*7}%`,"--delay":`${i*60}ms`} as React.CSSProperties} />)}</div>
+          <div className="chapter-inner scene-copy">
+            <p className="chapter-kicker">03 / Warframe</p>
+            <h2 id="uriel-title" className="glitch-title">URIEL<span className="glitch-copy" aria-hidden="true">URIEL</span><span className="title-period">.</span></h2>
+            <p className="scene-subtitle">My main.</p>
+            <p className="chapter-description">Warframe is one of the games I keep coming back to. Uriel is my go-to. CoD, Minecraft and plenty of other games get time too.</p>
+            <div className="scene-tags"><span>Warframe</span><span>Uriel main</span><span>PC &amp; consoles</span></div>
+            <p className="scene-note image-credit">Uriel / Warframe · Reference image, not my own Fashionframe.</p>
           </div>
-          <div className="about-copy">
-            <p className="about-statement">
-              I&apos;m Gilian, better known online as Voxxai. I graduated in
-              Computer Science at Hogeschool Rotterdam and now build software
-              professionally.
-            </p>
-            <div className="about-columns">
-              <p>
-                I like code that is readable, interfaces that get out of the
-                way and systems that remain understandable six months later.
-                My work sits between frontend, backend and the product choices
-                connecting both.
-              </p>
-              <p>
-                Away from work, you&apos;ll usually find me gaming, keeping an eye
-                on new hardware and AI, or turning my Raspberry Pi into one
-                more thing it probably wasn&apos;t bought for.
-              </p>
-            </div>
-          </div>
+          <span className="scene-edge-label" aria-hidden="true">FIRE IN THE FRAME / VOXXAI</span>
         </section>
 
-        <section className="stack-section section-frame" id="stack">
-          <div className="section-heading stack-heading">
-            <div>
-              <p className="section-label">04 / TOOLKIT</p>
-              <h2>What I reach for.</h2>
-            </div>
-            <p>
-              The stack changes with the problem. These are the tools and
-              patterns I&apos;m most comfortable shipping with today.
-            </p>
+        <section className="chapter chapter-jinx" id="jinx" aria-labelledby="jinx-title">
+          <div className="jinx-backdrop" aria-hidden="true" />
+          <div className="scene-image jinx-image"><Image src="/jinx-arcane.webp" alt="Jinx from Arcane, wearing a hood, with blue and purple hair" fill sizes="(max-width:760px) 100vw, 55vw" /></div>
+          <div className="jinx-paint" aria-hidden="true"><span>×</span><span>×</span><i /></div>
+          <div className="chapter-inner scene-copy jinx-copy">
+            <p className="chapter-kicker">04 / Jinx. Arcane.</p>
+            <h2 id="jinx-title" className="glitch-title">JINX<span className="glitch-copy" aria-hidden="true">JINX</span><span className="title-period">.</span></h2>
+            <p className="scene-subtitle">The favourite.</p>
+            <p className="chapter-description">Jinx is my favourite character. That mix of colour, rough edges and chaos has a place here too.</p>
+            <p className="jinx-personal-note">Vox is my own character.<br />Jinx is the favourite.</p>
+            <p className="scene-note image-credit">Jinx / Arcane · Character artwork.</p>
           </div>
-
-          <div className="stack-grid">
-            {skillsByCategory.map((group, index) => (
-              <article key={group.category} className="stack-group">
-                <span className="stack-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{group.category}</h3>
-                <p>{group.items.join(" / ")}</p>
-              </article>
-            ))}
-          </div>
+          <span className="scene-edge-label" aria-hidden="true">A LITTLE CHAOS LOOKS GOOD HERE.</span>
         </section>
 
-        <section className="signal-section section-frame" id="signal">
-          <div className="signal-heading">
-            <div>
-              <p className="section-label">05 / OFF-SCREEN SIGNAL</p>
-              <h2>The rest of the operating system.</h2>
-            </div>
-            <p>
-              Code is only one tab. The others usually contain a Docker log,
-              a game, a hardware rabbit hole or music at an unreasonable BPM.
-            </p>
-          </div>
+        <section className="chapter chapter-soundtrack" id="soundtrack" aria-label="The soundtrack"><div className="chapter-inner"><Soundtrack /></div></section>
 
-          <div className="signal-layout">
-            <div className="signal-notes">
-              <article>
-                <span>HOME_01</span>
-                <h3>Raspberry Pi 5</h3>
-                <p>Docker · Discord bot · Twitch bot · homelab experiments</p>
-              </article>
-              <article>
-                <span>QUEUE_02</span>
-                <h3>Games</h3>
-                <p>Warframe · Fortnite · ZZZ · Wuthering Waves</p>
-              </article>
-              <article>
-                <span>AUDIO_03</span>
-                <h3>High BPM only</h3>
-                <p>Hardcore · Frenchcore · Uptempo</p>
-              </article>
-              <article>
-                <span>RADAR_04</span>
-                <h3>Currently watching</h3>
-                <p>Anime · AI · hardware · whatever ships next</p>
-              </article>
+        <section className="chapter chapter-about" id="about" aria-labelledby="about-title">
+          <div className="chapter-inner about-grid">
+            <div className="about-introduction"><p className="chapter-kicker">06 / Behind Voxxai</p><h2 id="about-title">Still Gilian.</h2><p className="chapter-description">I graduated in Computer Science at Hogeschool Rotterdam in 2026. I now work as a software engineer at Spaux.</p><p>I like understanding what happens behind an interface: where the data goes, how a login works, and how the systems connect.</p><span className="hand-signature">Gilian <i>/</i> Voxxai</span></div>
+            <div className="about-details">
+              <div className="pi-note"><span className="small-label">At home / Raspberry Pi 5</span><h3>The bots live here.</h3><p>My Pi runs my Discord and Twitch bots with Docker and Linux. They&apos;re part of my own stream setup. I stream as Voxxai; the character, the projects and the stream all belong here.</p><div className="pi-ports" aria-hidden="true"><i /><i /><i /><span>VOX / HOME</span></div></div>
+              <div className="contact-block" id="contact"><span className="small-label">Get in touch</span><h3>Want to talk?</h3><p>About a project, something I&apos;ve built, or your own setup. Send me a message.</p><a href="mailto:contact@voxxai.dev" className="email-link">contact@voxxai.dev <ArrowUpRight size={20} aria-hidden="true" /></a><div className="social-links"><ExternalLink href="https://github.com/voxxai"><Github size={16} aria-hidden="true" />GitHub</ExternalLink><a href="mailto:contact@voxxai.dev"><Mail size={16} aria-hidden="true" />Email</a></div></div>
             </div>
-          </div>
-        </section>
-
-        <section className="contact-section section-frame" id="contact">
-          <p className="section-label">06 / SAY HELLO</p>
-          <div className="contact-layout">
-            <h2>Got something worth building?</h2>
-            <div className="contact-copy">
-              <p>
-                If you want to talk code, a project, or a particularly cursed
-                homelab idea, my inbox is open.
-              </p>
-              <a className="email-link" href="mailto:contact@voxxai.dev">
-                contact@voxxai.dev
-                <ArrowUpRight aria-hidden="true" size={26} />
-              </a>
-              <div className="social-links" aria-label="Social links">
-                <ExternalLink href="https://github.com/voxxai">
-                  <Github aria-hidden="true" size={18} /> GitHub
-                </ExternalLink>
-                <a href="mailto:contact@voxxai.dev">
-                  <Mail aria-hidden="true" size={18} /> Email
-                </a>
-              </div>
-            </div>
+            <footer className="experience-footer"><span>© {new Date().getFullYear()} Voxxai / VOX</span><a href="/privacy.html" lang="nl">Privacy &amp; cookies</a><a href="#top">Back to the beginning ↑</a></footer>
           </div>
         </section>
       </main>
-
-      <footer className="site-footer section-frame">
-        <span>© {new Date().getFullYear()} voxxai</span>
-        <span>Designed &amp; built by voxxai</span>
-        <a href="#top">Back to top ↑</a>
-        <a href="/privacy.html" lang="nl">Privacy &amp; cookies</a>
-      </footer>
+      <ExperienceNavigation />
     </div>
-  );
+  </PortfolioExperience>;
 }

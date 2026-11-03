@@ -1,43 +1,68 @@
-# voxxai visual system — Castle
+# Voxxai — chapter experience
 
-## Thesis
+Voxxai / VOX is the shared identity behind Gilian's software projects, stream,
+gaming and music. The portfolio is a six-chapter visual experience, with useful
+project and contact information available directly through the fixed header.
 
-The portfolio wears the same "castle" identity as the Vox stream overlays:
-a dark keep at night, lit by red signal light and gold trim. It should feel
-like the stream's home base, not a cyberpunk dashboard or a generic SaaS page.
+## Chapters
 
-## Tokens
+1. **Voxxai** — original Castle portrait, large wordmark, black / red / gold.
+2. **The engineer** — LifeQuest development screenshot and honest MVP status;
+   expandable archive with public source links and a compact toolkit.
+3. **Uriel** — user-supplied Warframe reference image, ember / orange theme.
+   Uriel is the user's main. Explicitly not presented as their own Fashionframe.
+4. **Jinx** — user-supplied Arcane portrait, ink / cyan / magenta, rough drawn
+   accents. Jinx remains a favourite; C.C. is omitted. Vox is a separate OC.
+5. **The soundtrack** — interactive hardcore / uptempo (default, first choice) and U2 themes.
+   User-supplied GPF and U2 concert photos switch with the selection. GPF is
+   the favourite artist; hardcore / uptempo remains first and default. No listening widget.
+6. **Behind Voxxai** — Computer Science graduation in 2026, current role at
+   Spaux, home Pi / Discord / Twitch bots, signature and contact.
 
-- Background `#0A0A0D`, raised panels `#121217`, text `#F5F6FB`, muted `#A1A8B8`.
-- Red `#FF1F3D` (primary signal, CTAs, labels), deep red `#B0001C`, gold `#E8B84A`
-  (secondary accents, focus ring, selection). No other signal colours.
-- Headings: Orbitron (500/700/900). Body, labels and UI: Chakra Petch.
-  Both are self-hosted via `next/font` at build time — no runtime Google Fonts
-  request (see PRIVACY_REVIEW.md).
-- Corners: cut corners (`--cut: 14px`) on buttons, the portrait and key panels.
-- Background: a faint 48 px red grid with a soft red glow at the top.
+## Brand and image rules
 
-## Rules
+- The global identity stays ink `#0a0a0d`, red `#ff1f3d`, gold `#e8b84a`, with
+  Orbitron headings and Chakra Petch body text. Cut corners remain on key actions.
+- Uriel (`#ff772b` / `#ffc079`) and Jinx (`#ed4aa8` / `#66deee`) have deliberately
+  scoped chapter accents, per the user's explicit direction. The fixed controls
+  adopt the active chapter's accents. These are not a global brand replacement.
+- `public/uriel-reference.webp` and `public/jinx-arcane.webp` are optimised from
+  the two user attachments supplied on 3 Nov 2026. Preserve the original scenes;
+  use responsive crops and CSS overlays, not generated replacement characters.
+- `public/gpf-live.webp` and `public/u2-live.webp` are optimised copies of the
+  two concert images supplied by the user on 3 Nov 2026.
+- `public/lifequest-desktop.webp` is the reviewed empty development screenshot
+  from LifeQuest's `docs/p5-screenshots/after-shell-desktop.png`.
+- No surname or hometown outside the existing privacy notice. No invented
+  professional claims, activity statuses or metrics. No Spotify widgets.
 
-- Let typography, spacing and hard dividers create hierarchy; Orbitron is wide,
-  so keep heading sizes smaller and letter-spacing near zero.
-- Red glow only as feedback (hover/focus on CTAs and cards) or on one hero word —
-  never as background blobs.
-- Use the Vox OC portrait (`/castle-portrait.webp`) once, as identity.
-- Write concrete copy in Gilian's voice. No claims such as "innovative" or "world-class".
-- No surname or hometown anywhere except the privacy notice.
-- Projects must have a public, unauthenticated source URL before appearing as public work.
-- Prefer editorial rows and asymmetric composition over repeated icon-card grids.
-- Motion is user-triggered feedback, 100–220 ms, and respects `prefers-reduced-motion`.
-- Text contrast meets WCAG AA (red `#FF1F3D` on `#0A0A0D` ≈ 5:1; dark text on red/gold buttons).
+## Navigation and motion
 
-## Never add
+- With JavaScript enabled, use a fixed viewport stage with exactly one active
+  chapter. Crossfade / transform the layers; never leave a position between slides.
+  Inactive chapters are inert. Without JavaScript the document remains scrollable.
+- One wheel / trackpad gesture advances one chapter, with accumulation, a gesture
+  latch and a transition lock to prevent inertia skipping multiple chapters.
+  Vertical swipes, Left / Right, Page Up / Down, anchors and previous / next work.
+- Content taller than the viewport scrolls inside its own chapter before the next
+  gesture advances. Direct contact links open the final chapter and reveal contact.
+- Header links keep work and contact accessible without traversing every chapter.
+- Use static scanlines, one short clipped text glitch when a chapter enters,
+  staggered copy entrances, gentle image settling and a finite ember reveal in the Uriel scene.
+- Chaos defaults off. Its switch adds recurring clipped glitch feedback, moving
+  scan bands, click / tap particle bursts, stronger scene colour, the
+  pooled cursor particles, larger reactive name letters, interactive panel tilt and an
+  extra LifeQuest note. Escape restores the quiet state. Never autoplay audio.
+- Reduced motion removes smooth navigation, transitions and all animated
+  effects. Scene images and text remain visible. All content stays accessible.
+- Soundtrack choices use real buttons with pressed state and live text updates.
+  Music favourites do not imply that anything is playing.
+- Five quick wordmark clicks retain the small easter egg and normal top anchor.
 
-- purple-to-cyan glow blobs or the old blue/pink/lime palette;
-- glassmorphism panels;
-- generic three-card feature rows;
-- fake terminal windows;
-- decorative dashboards or made-up metrics;
-- auto-playing entrance animations or looping glitch effects (those stay on stream);
-- stock imagery or generated UI screenshots;
-- multiple competing call-to-action styles.
+## Verification
+
+Build and TypeScript checks, followed by deployed-preview browser checks for
+chapter links, arrow navigation, archive expansion, soundtrack choices, chaos,
+image loading and narrow viewport overflow. A managed preview launcher that passes
+Vite flags is incompatible with this Next.js repository; use its Vercel PR preview
+for browser QA rather than changing the application to suit that launcher.
