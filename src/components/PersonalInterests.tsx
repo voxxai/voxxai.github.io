@@ -17,20 +17,20 @@ const interests = [
     id: "games", label: "Games", aside: "Usually another grind.",
     heading: "Warframe, CoD, Minecraft.",
     paragraphs: [
-      "I play across PC and consoles. Warframe is one of my regular games; Wukong is my go-to. Call of Duty and Minecraft get plenty of time too.",
+      "I play across PC and consoles. Warframe is one of my regular games; Uriel is my go-to. Call of Duty and Minecraft get plenty of time too.",
       "I also stream on Twitch as Voxxai. Gaming and building things overlap a bit: the bots running on my Pi are part of my own stream setup.",
     ],
     tags: ["Warframe", "Call of Duty", "Minecraft", "Twitch"],
-    note: "Wukong main.",
+    note: "Uriel main.",
   },
   {
     id: "anime", label: "Anime & the OC", aside: "About that portrait.",
     heading: "Jinx is the favourite.",
     paragraphs: [
-      "Jinx from League of Legends is my favourite character. C.C. from Code Geass is another favourite, and anime is a big part of what I watch.",
+      "Jinx from League of Legends is my favourite character. Anime is also a big part of what I watch.",
       "The blond character on this site is Vox, my own OC. He's the face I use for Voxxai, across my portfolio and stream branding.",
     ],
-    tags: ["Jinx", "C.C.", "Vox / original character"],
+    tags: ["Jinx", "Vox / original character"],
     note: "Same person behind the code and the stream.",
   },
   {
