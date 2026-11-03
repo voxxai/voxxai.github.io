@@ -172,18 +172,18 @@ h1,h2,h3,h4 { text-wrap:balance; }
 .experience-footer { grid-column:1/-1; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; border-top:1px solid var(--line); padding-top:1.5rem; color:var(--muted); font-size:.7rem; }
 .experience-footer a { min-height:44px; display:flex; align-items:center; }
 
-.chapter-nav { position:fixed; z-index:70; right:1.5rem; top:50%; transform:translateY(-50%); display:grid; gap:.35rem; }
+.chapter-nav { position:fixed; z-index:72; right:1.5rem; top:50%; transform:translateY(-50%); display:grid; gap:.35rem; }
 .chapter-nav a { display:flex; align-items:center; justify-content:end; min-height:40px; gap:1rem; }
 .chapter-nav-marker { display:grid; place-items:center; min-width:34px; height:34px; font-size:.65rem; color:#9194a5; border:1px solid transparent; transition:border-color 200ms,color 200ms; }
 .chapter-nav-label { padding:.3rem .5rem; color:var(--text); background:#0a0a0dd9; opacity:0; font-size:.65rem; text-transform:uppercase; letter-spacing:.1em; transition:opacity 180ms; }
 .chapter-nav a:hover .chapter-nav-label,.chapter-nav a:focus-visible .chapter-nav-label { opacity:1; }
 .chapter-nav a[aria-current] .chapter-nav-marker { color:var(--scene-alt); border-color:var(--scene-accent); background:#0a0a0d88; }
-.experience-controls { position:fixed; z-index:70; inset:auto 0 0; display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:74px; padding:.8rem clamp(1.25rem,4vw,4.5rem); background:linear-gradient(transparent,#0a0a0de8 50%); }
+.experience-controls { position:fixed; z-index:70; inset:auto 0 0; display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:74px; padding:.8rem clamp(1.25rem,4vw,4.5rem); background:linear-gradient(transparent,#0a0a0de8 50%); pointer-events:none; }
 .chapter-counter { font-size:.7rem; color:var(--muted); }
 .chapter-counter b { color:var(--scene-alt); font-weight:500; }
 .chapter-counter > span { display:inline-block; color:#d1d3db; margin-left:1.2rem; }
 .navigation-hint { color:#b1b4c3; font-size:.65rem; letter-spacing:.08em; }
-.chapter-arrows { display:flex; align-items:center; gap:.5rem; }
+.chapter-arrows { display:flex; align-items:center; gap:.5rem; pointer-events:auto; }
 .chapter-arrows > * { display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); font-size:1.1rem; }
 .chapter-arrows > span { color:#ffffff22; border-color:#ffffff0a; }
 .chapter-arrows > a:hover { color:var(--scene-alt); border-color:var(--scene-accent); }
