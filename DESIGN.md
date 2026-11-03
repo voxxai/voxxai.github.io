@@ -60,6 +60,11 @@ like the stream's home base, not a cyberpunk dashboard or a generic SaaS page.
   entrance, sweep, trail, letter movement, tilt and animated transitions.
 - Five quick logo clicks reveal a short aside without changing its back-to-top
   behaviour. No tracking or storage is added.
+- The personal interest picker covers music, games, anime / Vox, and the Pi.
+  Use native buttons with pressed state and a shared live content area, keeping
+  selection accessible to keyboard and touch without a hover requirement.
+  Content is based on Gilian's stated interests, not live listening or gaming
+  activity. No third-party embeds or fabricated activity indicators.
 - `public/lifequest-desktop.webp` comes from LifeQuest's reviewed development
   screenshot `docs/p5-screenshots/after-shell-desktop.png`: empty demo state, no
   personal health measurements. Keep future screenshots equally free of private data.

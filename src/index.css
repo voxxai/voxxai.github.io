@@ -230,3 +230,50 @@ html[data-chaos=on] .wordmark-mark { color: var(--gold); }
   .chaos-sweep, .cursor-trail { display: none; }
   html[data-chaos=on] .tilt-panel, html[data-chaos=on] .profile-offset, .button:hover, html[data-chaos=on] .button:hover, .project-preview > a:hover { transform: none; }
 }
+
+/* A personal sidebar: one story at a time, rather than another card grid. */
+.personal-section { padding-block: 0 5rem; }
+.personal-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2rem; }
+.personal-heading .eyebrow { margin-bottom: 1rem; }
+.personal-heading h2 { font-size: clamp(1.7rem,2.5vw,2.4rem); }
+.personal-heading > p { color: var(--muted); font-size: .9rem; line-height: 1.6; max-width: 220px; }
+.personal-layout { display: grid; grid-template-columns: minmax(240px,.7fr) minmax(0,1.3fr); border-block: 1px solid var(--line); }
+.interest-picker { border-right: 1px solid var(--line); }
+.interest-picker button { display: flex; width: 100%; align-items: center; gap: 1rem; padding: 1.4rem 1.5rem 1.4rem 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--muted); text-align: left; cursor: pointer; transition: color 180ms,background 180ms; }
+.interest-picker button:last-child { border-bottom: 0; }
+.interest-number { color: var(--gold); font-size: .72rem; }
+.interest-picker strong { display: block; color: var(--text); font-size: 1rem; font-weight: 500; }
+.interest-picker small { display: block; margin-top: .35rem; font-size: .78rem; }
+.interest-arrow { margin-left: auto; color: var(--muted); transition: transform 180ms; }
+.interest-picker button[aria-pressed=true] { background: linear-gradient(90deg,transparent,rgba(255,31,61,.055)); }
+.interest-picker button[aria-pressed=true] strong, .interest-picker button[aria-pressed=true] .interest-arrow { color: var(--gold); }
+.interest-picker button:hover .interest-arrow { transform: translate(2px,-2px); }
+.personal-story { min-width: 0; padding: 2rem 0 2rem clamp(1.5rem,4vw,4rem); }
+.interest-content { animation: interest-arrive 180ms ease-out; }
+.interest-label { display: block; margin-bottom: 1rem; color: var(--red); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; }
+.interest-content h3 { margin-bottom: 1.3rem; font-family: var(--heading); font-weight: 500; font-size: clamp(1.1rem,1.8vw,1.6rem); line-height: 1.4; }
+.interest-content > p { margin-top: 1rem; color: #b8beca; font-size: .95rem; line-height: 1.8; }
+.interest-tags { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin: 1.5rem 0; padding: 0; list-style: none; font-size: .75rem; color: var(--gold); }
+.interest-content .interest-footnote { width: fit-content; margin-top: 1.5rem; padding-left: .8rem; border-left: 1px solid var(--gold); color: var(--muted); font-size: .82rem; }
+.personal-signoff { color: var(--text); }
+.personal-signoff > span { margin-inline: .5rem; color: var(--red); }
+html[data-chaos=on] .interest-picker button[aria-pressed=true] .interest-arrow { transform: rotate(45deg); color: var(--red); }
+@keyframes interest-arrive { from { opacity: .5; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) {
+  .personal-heading { align-items: start; flex-direction: column; gap: 1rem; }
+  .personal-heading > p { max-width: none; }
+  .personal-layout { grid-template-columns: 1fr; }
+  .interest-picker { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border-right: 0; border-bottom: 1px solid var(--line); }
+  .interest-picker button { padding: 1rem .75rem; min-height: 86px; gap: .6rem; }
+  .interest-picker button:nth-child(odd) { border-right: 1px solid var(--line); }
+  .interest-picker button:nth-child(n+3) { border-bottom: 0; }
+  .interest-picker strong { font-size: .88rem; }
+  .interest-picker small { font-size: .72rem; }
+  .interest-arrow { display: none; }
+  .personal-story { padding: 1.75rem 0; }
+  .personal-section { padding-bottom: 3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .interest-content { animation: none; }
+  .interest-picker button:hover .interest-arrow, html[data-chaos=on] .interest-picker button[aria-pressed=true] .interest-arrow { transform: none; }
+}

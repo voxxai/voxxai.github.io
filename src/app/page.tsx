@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight, Github, Mail } from "lucide-react";
 import { projects } from "@/data/projects";
+import { PersonalInterests } from "@/components/PersonalInterests";
 import {
   AnimatedName, ChaosSwitch, PortfolioExperience, ProjectNote, TiltPanel, Wordmark,
 } from "@/components/PortfolioExperience";
@@ -98,18 +99,14 @@ export default function HomePage() {
           </section>
 
           <section className="about-section section-frame" id="about" aria-labelledby="about-title">
-            <div className="about-lead"><p className="eyebrow">A bit about me</p><h2 id="about-title">Gilian, away<br />from the editor.</h2><span className="small-aside">Still probably near a screen.</span></div>
+            <div className="about-lead"><p className="eyebrow">A bit about me</p><h2 id="about-title">A little background.</h2><span className="small-aside">Computer Science / Class of 2026</span></div>
             <div className="about-copy">
               <p className="about-statement">I graduated in Computer Science at Hogeschool Rotterdam. I now work as a software engineer at Spaux.</p>
               <p>I like understanding what happens behind an interface: where the data goes, how a login works, and what connects one system to another. That&apos;s where most of my work ends up.</p>
-              <p>At home, my Raspberry Pi runs my Discord and Twitch bots. I also game, stream, watch anime and follow new hardware. Music goes from U2 and Joe Bonamassa to hardcore and uptempo, depending on the day.</p>
-              <div className="desk-notes" aria-label="Outside work">
-                <div><span>On the Pi</span><p>Docker, Discord &amp; Twitch bots</p></div>
-                <div><span>In the rotation</span><p>Warframe, Call of Duty &amp; Minecraft</p></div>
-                <div><span>In my headphones</span><p>U2, blues, hardcore &amp; uptempo</p></div>
-              </div>
             </div>
           </section>
+
+          <PersonalInterests />
 
           <section className="toolkit-section section-frame" aria-labelledby="toolkit-title">
             <h2 id="toolkit-title">Tools I use</h2>
@@ -128,7 +125,7 @@ export default function HomePage() {
             </div>
           </section>
         </main>
-        <footer className="site-footer section-frame"><span>© {new Date().getFullYear()} Voxxai</span><span>Built here. Still tinkering.</span><a href="/privacy.html" lang="nl">Privacy &amp; cookies</a><a href="#top">Back up ↑</a></footer>
+        <footer className="site-footer section-frame"><span>© {new Date().getFullYear()} Voxxai</span><span className="personal-signoff">Gilian <span aria-hidden="true">/</span> Voxxai</span><a href="/privacy.html" lang="nl">Privacy &amp; cookies</a><a href="#top">Back up ↑</a></footer>
       </div>
     </PortfolioExperience>
   );
