@@ -1,329 +1,135 @@
 import Image from "next/image";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Github,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Github, Mail } from "lucide-react";
 import { projects } from "@/data/projects";
-import { skillsByCategory } from "@/data/skills";
-import { ChaosSwitch } from "@/components/ChaosSwitch";
+import {
+  AnimatedName, ChaosSwitch, PortfolioExperience, ProjectNote, TiltPanel, Wordmark,
+} from "@/components/PortfolioExperience";
 
-const mainLinks = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#signal", label: "Off-screen" },
-  { href: "#contact", label: "Contact" },
-];
-
-const projectMeta: Record<
-  string,
-  { kind: string; number: string; liveUrl?: string }
-> = {
-  ProjectC: { kind: "Archived school platform", number: "01" },
-  Django_Project: { kind: "Archived learning build", number: "02" },
-};
-
-function ExternalLink({
-  href,
-  children,
-  className = "",
-}: {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
+function ExternalLink({ href, children, className = "" }: {
+  href: string; children: React.ReactNode; className?: string;
 }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className={className}
-    >
-      {children}
-      <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.8} />
-    </a>
-  );
+  return <a href={href} target="_blank" rel="noreferrer" className={className}>
+    {children}<ArrowUpRight aria-hidden="true" size={16} />
+  </a>;
 }
 
 export default function HomePage() {
-  const featuredProject = projects[0];
-  const otherProjects = projects.slice(1);
-
   return (
-    <div className="site-shell">
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Voxxai, back to top">
-          voxxai<span className="wordmark-mark">//</span>
-        </a>
+    <PortfolioExperience>
+      <div className="site-shell">
+        <a className="skip-link" href="#main">Skip to content</a>
+        <header className="site-header section-frame">
+          <Wordmark />
+          <nav className="site-nav" aria-label="Primary navigation">
+            <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+          </nav>
+          <a className="header-github" href="https://github.com/voxxai" target="_blank" rel="noreferrer" aria-label="Voxxai on GitHub">
+            <Github size={19} aria-hidden="true" />
+          </a>
+        </header>
 
-        <nav className="site-nav" aria-label="Primary navigation">
-          {mainLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <span className="header-role">SOFTWARE ENGINEER · NL</span>
-      </header>
-
-      <main id="top">
-        <section className="hero section-frame" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <p className="section-label">01 / GILIAN</p>
-            <h1 id="hero-title">
-              Build it. Break it.
-              <span>Build it better.</span>
-            </h1>
-            <p className="hero-intro">
-              Software Engineer with a soft spot for the machinery behind the
-              UI: APIs, authentication, architecture, data flows and
-              automation. I build things I need, things I want to understand
-              and occasionally things that should have taken five minutes.
-            </p>
-
-            <div className="hero-actions">
-              <a className="button button-primary" href="#work">
-                See selected work
-                <ArrowDownRight aria-hidden="true" size={18} />
-              </a>
-              <ExternalLink
-                href="https://github.com/voxxai"
-                className="button button-secondary"
-              >
-                GitHub
-              </ExternalLink>
-            </div>
-
-            <dl className="quick-facts">
-              <div>
-                <dt>Focus</dt>
-                <dd>Backend · auth · automation</dd>
+        <main id="main">
+          <section className="hero section-frame" id="top" aria-labelledby="hero-title">
+            <div className="hero-copy">
+              <p className="eyebrow">Gilian / Software engineer / NL</p>
+              <h1 id="hero-title">Hey, I&apos;m Gilian.<AnimatedName /></h1>
+              <p className="hero-intro">
+                I work mostly on backends, authentication and automation.
+                Outside work, I build my own projects and run Discord and Twitch
+                bots on a Raspberry Pi.
+              </p>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#work">What I&apos;m building<ArrowDownRight size={18} aria-hidden="true" /></a>
+                <ExternalLink href="https://github.com/voxxai" className="text-link">GitHub</ExternalLink>
               </div>
-              <div>
-                <dt>Based</dt>
-                <dd>
-                  <MapPin aria-hidden="true" size={14} /> Netherlands
-                </dd>
-              </div>
-              <div>
-                <dt>Exploring</dt>
-                <dd>Rust · Linux · AI tooling</dd>
-              </div>
-            </dl>
-          </div>
-
-          <figure className="profile-block">
-            <div className="profile-offset" aria-hidden="true" />
-            <div className="profile-image-wrap">
-              <Image
-                src="/castle-portrait.webp"
-                alt="Vox, the blond hooded original character used as voxxai's avatar"
-                fill
-                priority
-                sizes="(max-width: 900px) 82vw, 420px"
-                className="profile-image"
-              />
+              <p className="margin-note">There&apos;s usually music involved. U2, blues, or something much louder.</p>
             </div>
-            <figcaption>
-              <span>voxxai</span>
-              <ChaosSwitch />
-            </figcaption>
-          </figure>
-        </section>
-
-        <section className="work-section section-frame" id="work">
-          <div className="section-heading">
-            <div>
-              <p className="section-label">02 / SELECTED WORK</p>
-              <h2>Useful builds, not filler.</h2>
-            </div>
-            <p>
-              A small public archive: two earlier builds.
-              Every source link opens without an account.
-            </p>
-          </div>
-
-          <article className="featured-project">
-            <div className="project-index">
-              <span>{projectMeta[featuredProject.name]?.number}</span>
-              <span>{projectMeta[featuredProject.name]?.kind}</span>
-            </div>
-            <div className="featured-project-copy">
-              <div className="project-title-row">
-                <h3>{featuredProject.name}</h3>
-                <span className="status-badge">\n                  {featuredProject.archived ? "ARCHIVED" : "ACTIVE"}\n                </span>
-              </div>
-              <p>{featuredProject.description}</p>
-              <div className="project-footer">
-                <span>{featuredProject.language}</span>
-                <div className="project-links">
-                  {projectMeta[featuredProject.name]?.liveUrl && (
-                    <ExternalLink
-                      href={projectMeta[featuredProject.name].liveUrl!}
-                      className="text-link"
-                    >
-                      Live app
-                    </ExternalLink>
-                  )}
-                  <ExternalLink
-                    href={featuredProject.html_url}
-                    className="text-link"
-                  >
-                    Source
-                  </ExternalLink>
+            <figure className="profile-block">
+              <TiltPanel className="portrait-tilt">
+                <div className="profile-offset" aria-hidden="true" />
+                <div className="profile-image-wrap">
+                  <Image src="/castle-portrait.webp" alt="Vox, my blond, hooded original character" fill priority sizes="(max-width: 760px) 80vw, 420px" className="profile-image" />
                 </div>
+                <span className="portrait-sidenote">The online face.</span>
+              </TiltPanel>
+              <figcaption><span>voxxai / VOX</span><ChaosSwitch /></figcaption>
+            </figure>
+          </section>
+
+          <section className="work-section section-frame" id="work" aria-labelledby="current-title">
+            <div className="section-heading">
+              <div><p className="eyebrow">On my own time</p><h2 id="current-title">Currently building<span className="accent-dot">.</span></h2></div>
+              <p>A project of my own, still taking shape.</p>
+            </div>
+            <TiltPanel className="current-project">
+              <div className="current-copy">
+                <div className="project-topline"><span>Personal project</span><span className="status-badge">In development</span></div>
+                <h3>LifeQuest</h3>
+                <p>I wanted a place to keep track of habits, walks and health data. That became LifeQuest: a habit tracker I&apos;m building for web and mobile.</p>
+                <p>It&apos;s an early MVP. You can set your own habits and goals, log your progress, and install it as a PWA.</p>
+                <ul className="tech-list" aria-label="LifeQuest technologies"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li></ul>
+                <ProjectNote>I&apos;m building the tracker. Still have to do the walking myself.</ProjectNote>
+                <p className="project-availability">Private source for now. I&apos;ll share more here as it develops.</p>
               </div>
-            </div>
-          </article>
-
-          <div className="project-list">
-            {otherProjects.map((project) => {
-              const meta = projectMeta[project.name];
-
-              return (
-                <ExternalLink
-                  key={project.name}
-                  href={project.html_url}
-                  className="project-row"
-                >
-                  <span className="project-number">{meta?.number}</span>
-                  <div>
-                    <span className="project-kind">{meta?.kind}</span>
-                    <h3>{project.name.replace("_", " ")}</h3>
-                  </div>
-                  <p>{project.description}</p>
-                  <span className="project-language">{project.language}</span>
-                </ExternalLink>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="about-section section-frame" id="about">
-          <div className="about-lead">
-            <p className="section-label">03 / ABOUT</p>
-            <h2>Engineer by trade. Tinkerer by default.</h2>
-          </div>
-          <div className="about-copy">
-            <p className="about-statement">
-              I&apos;m Gilian, better known online as Voxxai. I graduated in
-              Computer Science at Hogeschool Rotterdam and now build software
-              professionally.
-            </p>
-            <div className="about-columns">
-              <p>
-                I like code that is readable, interfaces that get out of the
-                way and systems that remain understandable six months later.
-                My work sits between frontend, backend and the product choices
-                connecting both.
-              </p>
-              <p>
-                Away from work, you&apos;ll usually find me gaming, keeping an eye
-                on new hardware and AI, or turning my Raspberry Pi into one
-                more thing it probably wasn&apos;t bought for.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="stack-section section-frame" id="stack">
-          <div className="section-heading stack-heading">
-            <div>
-              <p className="section-label">04 / TOOLKIT</p>
-              <h2>What I reach for.</h2>
-            </div>
-            <p>
-              The stack changes with the problem. These are the tools and
-              patterns I&apos;m most comfortable shipping with today.
-            </p>
-          </div>
-
-          <div className="stack-grid">
-            {skillsByCategory.map((group, index) => (
-              <article key={group.category} className="stack-group">
-                <span className="stack-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{group.category}</h3>
-                <p>{group.items.join(" / ")}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="signal-section section-frame" id="signal">
-          <div className="signal-heading">
-            <div>
-              <p className="section-label">05 / OFF-SCREEN SIGNAL</p>
-              <h2>The rest of the operating system.</h2>
-            </div>
-            <p>
-              Code is only one tab. The others usually contain a Docker log,
-              a game, a hardware rabbit hole or music at an unreasonable BPM.
-            </p>
-          </div>
-
-          <div className="signal-layout">
-            <div className="signal-notes">
-              <article>
-                <span>HOME_01</span>
-                <h3>Raspberry Pi 5</h3>
-                <p>Docker · Discord bot · Twitch bot · homelab experiments</p>
-              </article>
-              <article>
-                <span>QUEUE_02</span>
-                <h3>Games</h3>
-                <p>Warframe · Fortnite · ZZZ · Wuthering Waves</p>
-              </article>
-              <article>
-                <span>AUDIO_03</span>
-                <h3>High BPM only</h3>
-                <p>Hardcore · Frenchcore · Uptempo</p>
-              </article>
-              <article>
-                <span>RADAR_04</span>
-                <h3>Currently watching</h3>
-                <p>Anime · AI · hardware · whatever ships next</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="contact-section section-frame" id="contact">
-          <p className="section-label">06 / SAY HELLO</p>
-          <div className="contact-layout">
-            <h2>Got something worth building?</h2>
-            <div className="contact-copy">
-              <p>
-                If you want to talk code, a project, or a particularly cursed
-                homelab idea, my inbox is open.
-              </p>
-              <a className="email-link" href="mailto:contact@voxxai.dev">
-                contact@voxxai.dev
-                <ArrowUpRight aria-hidden="true" size={26} />
-              </a>
-              <div className="social-links" aria-label="Social links">
-                <ExternalLink href="https://github.com/voxxai">
-                  <Github aria-hidden="true" size={18} /> GitHub
-                </ExternalLink>
-                <a href="mailto:contact@voxxai.dev">
-                  <Mail aria-hidden="true" size={18} /> Email
+              <figure className="project-preview">
+                <a href="/lifequest-desktop.webp" target="_blank" rel="noreferrer" aria-label="Open full LifeQuest dashboard screenshot in a new tab">
+                  <Image src="/lifequest-desktop.webp" alt="LifeQuest dashboard showing habit tracking and an empty health log" width={1440} height={900} sizes="(max-width: 900px) 100vw, 700px" />
+                  <span className="preview-open">View screenshot <ArrowUpRight size={14} aria-hidden="true" /></span>
                 </a>
+                <figcaption>From the current development build. <span>Click to take a closer look.</span></figcaption>
+              </figure>
+            </TiltPanel>
+
+            <div className="earlier-heading"><h3>Earlier work</h3><p>Two school projects from before I graduated.</p></div>
+            <div className="project-list">
+              {projects.map((project, index) => (
+                <TiltPanel key={project.name} className="archive-project">
+                  <article>
+                    <span className="project-number">0{index + 1}</span>
+                    <div className="archive-title"><span className="project-kind">Archived / {project.language}</span><h4>{project.displayName}</h4></div>
+                    <div className="archive-description"><p>{project.description}</p>
+                      <details className="project-detail"><summary>A little context <span aria-hidden="true">+</span></summary><p>{project.note}</p></details>
+                    </div>
+                    <ExternalLink href={project.html_url} className="text-link">Source</ExternalLink>
+                  </article>
+                </TiltPanel>
+              ))}
+            </div>
+          </section>
+
+          <section className="about-section section-frame" id="about" aria-labelledby="about-title">
+            <div className="about-lead"><p className="eyebrow">A bit about me</p><h2 id="about-title">Gilian, away<br />from the editor.</h2><span className="small-aside">Still probably near a screen.</span></div>
+            <div className="about-copy">
+              <p className="about-statement">I graduated in Computer Science at Hogeschool Rotterdam. I now work as a software engineer at Spaux.</p>
+              <p>I like understanding what happens behind an interface: where the data goes, how a login works, and what connects one system to another. That&apos;s where most of my work ends up.</p>
+              <p>At home, my Raspberry Pi runs my Discord and Twitch bots. I also game, stream, watch anime and follow new hardware. Music goes from U2 and Joe Bonamassa to hardcore and uptempo, depending on the day.</p>
+              <div className="desk-notes" aria-label="Outside work">
+                <div><span>On the Pi</span><p>Docker, Discord &amp; Twitch bots</p></div>
+                <div><span>In the rotation</span><p>Warframe, Call of Duty &amp; Minecraft</p></div>
+                <div><span>In my headphones</span><p>U2, blues, hardcore &amp; uptempo</p></div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
 
-      <footer className="site-footer section-frame">
-        <span>© {new Date().getFullYear()} voxxai</span>
-        <span>Designed &amp; built by voxxai</span>
-        <a href="#top">Back to top ↑</a>
-        <a href="/privacy.html" lang="nl">Privacy &amp; cookies</a>
-      </footer>
-    </div>
+          <section className="toolkit-section section-frame" aria-labelledby="toolkit-title">
+            <h2 id="toolkit-title">Tools I use</h2>
+            <p>Next.js &amp; TypeScript for my web projects. Laravel and APIs on the backend. PostgreSQL for data. Docker, Linux and Git to keep things running.</p>
+            <span className="small-aside">Currently learning Rust, too.</span>
+          </section>
+
+          <section className="contact-section section-frame" id="contact" aria-labelledby="contact-title">
+            <p className="eyebrow">Say hello</p>
+            <div className="contact-layout">
+              <h2 id="contact-title">Want to talk?</h2>
+              <div className="contact-copy"><p>About a project, something I&apos;ve built, or your own Raspberry Pi setup. Send me a message.</p>
+                <a className="email-link" href="mailto:contact@voxxai.dev">contact@voxxai.dev<ArrowUpRight aria-hidden="true" size={24} /></a>
+                <div className="social-links"><ExternalLink href="https://github.com/voxxai"><Github size={17} aria-hidden="true" />GitHub</ExternalLink><a href="mailto:contact@voxxai.dev"><Mail size={17} aria-hidden="true" />Email</a></div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer className="site-footer section-frame"><span>© {new Date().getFullYear()} Voxxai</span><span>Built here. Still tinkering.</span><a href="/privacy.html" lang="nl">Privacy &amp; cookies</a><a href="#top">Back up ↑</a></footer>
+      </div>
+    </PortfolioExperience>
   );
 }
