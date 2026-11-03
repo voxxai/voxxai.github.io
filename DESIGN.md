@@ -1,70 +1,61 @@
-# voxxai visual system — Castle
+# Voxxai — chapter experience
 
-## Thesis
+Voxxai / VOX is the shared identity behind Gilian's software projects, stream,
+gaming and music. The portfolio is a six-chapter visual experience, with useful
+project and contact information available directly through the fixed header.
 
-The portfolio wears the same "castle" identity as the Vox stream overlays:
-a dark keep at night, lit by red signal light and gold trim. It should feel
-like the stream's home base, not a cyberpunk dashboard or a generic SaaS page.
+## Chapters
 
-## Tokens
+1. **Voxxai** — original Castle portrait, large wordmark, black / red / gold.
+2. **The engineer** — LifeQuest development screenshot and honest MVP status;
+   expandable archive with public source links and a compact toolkit.
+3. **Uriel** — user-supplied Warframe reference image, ember / orange theme.
+   Uriel is the user's main. Explicitly not presented as their own Fashionframe.
+4. **Jinx** — user-supplied Arcane portrait, ink / cyan / magenta, rough drawn
+   accents. Jinx remains a favourite; C.C. is omitted. Vox is a separate OC.
+5. **The soundtrack** — interactive U2, live blues and hardcore / uptempo themes.
+   Typographic record artwork, not fabricated album covers or a listening widget.
+6. **Behind Voxxai** — Computer Science graduation in 2026, current role at
+   Spaux, home Pi / Discord / Twitch bots, signature and contact.
 
-- Background `#0A0A0D`, raised panels `#121217`, text `#F5F6FB`, muted `#A1A8B8`.
-- Red `#FF1F3D` (primary signal, CTAs, labels), deep red `#B0001C`, gold `#E8B84A`
-  (secondary accents, focus ring, selection). No other signal colours.
-- Headings: Orbitron (500/700/900). Body, labels and UI: Chakra Petch.
-  Both are self-hosted via `next/font` at build time — no runtime Google Fonts
-  request (see PRIVACY_REVIEW.md).
-- Corners: cut corners (`--cut: 14px`) on buttons, the portrait and key panels.
-- Background: a faint 48 px red grid with a soft red glow at the top.
+## Brand and image rules
 
-## Rules
+- The global identity stays ink `#0a0a0d`, red `#ff1f3d`, gold `#e8b84a`, with
+  Orbitron headings and Chakra Petch body text. Cut corners remain on key actions.
+- Uriel (`#ff772b` / `#ffc079`) and Jinx (`#ed4aa8` / `#66deee`) have deliberately
+  scoped chapter accents, per the user's explicit direction. The fixed controls
+  adopt the active chapter's accents. These are not a global brand replacement.
+- `public/uriel-reference.webp` and `public/jinx-arcane.webp` are optimised from
+  the two user attachments supplied on 3 Nov 2026. Preserve the original scenes;
+  use responsive crops and CSS overlays, not generated replacement characters.
+- `public/lifequest-desktop.webp` is the reviewed empty development screenshot
+  from LifeQuest's `docs/p5-screenshots/after-shell-desktop.png`.
+- No surname or hometown outside the existing privacy notice. No invented
+  professional claims, activity statuses or metrics. No Spotify widgets.
 
-- Let typography, spacing and hard dividers create hierarchy; Orbitron is wide,
-  so keep heading sizes smaller and letter-spacing near zero.
-- Red glow only as feedback (hover/focus on CTAs and cards) or on one hero word —
-  never as background blobs.
-- Use the Vox OC portrait (`/castle-portrait.webp`) once, as identity.
-- Write concrete copy in Gilian's voice. No claims such as "innovative" or "world-class".
-- No surname or hometown anywhere except the privacy notice.
-- Public source links must open without authentication. A private project may be
-  presented with an accurate development status and a real, reviewed screenshot;
-  label private source clearly and do not link to its private repository.
-- Prefer editorial rows and asymmetric composition over repeated icon-card grids.
-- Use one brief name entrance and underline on arrival. Other motion is
-  user-triggered: 180–220 ms feedback, a 450 ms letter spring, or a single
-  650–700 ms chaos activation. Respect `prefers-reduced-motion` throughout.
-- Text contrast meets WCAG AA (red `#FF1F3D` on `#0A0A0D` ≈ 5:1; dark text on red/gold buttons).
+## Navigation and motion
 
-## Never add
+- Native document scrolling; six sections with a minimum full viewport height.
+  Desktop uses proximity snapping. Mobile and reduced motion use ordinary scroll.
+  Tall content expands normally; no fixed-height content traps or wheel interception.
+- Direct chapter anchors, an active position rail, previous / next links and
+  Left / Right keys. Inputs and editable content keep their own keyboard behaviour.
+- Header links keep work and contact accessible without traversing every chapter.
+- Use static scanlines, one short clipped text glitch when a chapter enters,
+  gentle image settling and a finite ember reveal in the Uriel scene.
+- Chaos defaults off. Its switch adds stronger one-shot glitch feedback, the
+  pooled cursor particles, reactive name letters, interactive panel tilt and an
+  extra LifeQuest note. Escape restores the quiet state. Never autoplay audio.
+- Reduced motion removes snapping, smooth navigation, transitions and all animated
+  effects. Scene images and text remain visible. All content stays accessible.
+- Soundtrack choices use real buttons with pressed state and live text updates.
+  Music favourites do not imply that anything is playing.
+- Five quick wordmark clicks retain the small easter egg and normal top anchor.
 
-- purple-to-cyan glow blobs or the old blue/pink/lime palette;
-- glassmorphism panels;
-- generic three-card feature rows;
-- fake terminal windows;
-- decorative dashboards or made-up metrics;
-- repeated entrance animations or looping glitch effects;
-- stock imagery or generated UI screenshots;
-- multiple competing call-to-action styles.
+## Verification
 
-## Portfolio interaction notes
-
-- Lead with Gilian / Voxxai, then current work, archived work, a personal
-  introduction, a compact toolkit and contact. Avoid repeated numbered slogans.
-- Chaos defaults off on every visit. The portrait switch opts in; Escape opts
-  out. No audio, flashing or scroll interception.
-- Chaos adds a single red/gold sweep, reactive name letters, a pooled ten-particle
-  mouse trail, pointer-responsive portrait/project tilt and an extra project note.
-- Tapping the name works on touch devices; context notes use native details so
-  they also work with a keyboard. Hover is never required to access content.
-- Reduced motion keeps the colour changes and extra note but removes the
-  entrance, sweep, trail, letter movement, tilt and animated transitions.
-- Five quick logo clicks reveal a short aside without changing its back-to-top
-  behaviour. No tracking or storage is added.
-- The personal interest picker covers music, games, anime / Vox, and the Pi.
-  Use native buttons with pressed state and a shared live content area, keeping
-  selection accessible to keyboard and touch without a hover requirement.
-  Content is based on Gilian's stated interests, not live listening or gaming
-  activity. No third-party embeds or fabricated activity indicators.
-- `public/lifequest-desktop.webp` comes from LifeQuest's reviewed development
-  screenshot `docs/p5-screenshots/after-shell-desktop.png`: empty demo state, no
-  personal health measurements. Keep future screenshots equally free of private data.
+Build and TypeScript checks, followed by deployed-preview browser checks for
+chapter links, arrow navigation, archive expansion, soundtrack choices, chaos,
+image loading and narrow viewport overflow. A managed preview launcher that passes
+Vite flags is incompatible with this Next.js repository; use its Vercel PR preview
+for browser QA rather than changing the application to suit that launcher.
