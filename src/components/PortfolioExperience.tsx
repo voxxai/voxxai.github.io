@@ -135,7 +135,8 @@ export function AnimatedName() {
   return (
     <span className="hero-alias">
       <span className="alias-prefix">Online, it&apos;s</span>
-      <span className="alias-name" ref={name} aria-label="Voxxai.">
+      <span className="alias-name" ref={name}>
+        <span className="sr-only">Voxxai.</span>
         {"Voxxai.".split("").map((letter, index) => (
           <span key={index} className="reactive-letter" aria-hidden="true"
             onPointerEnter={(event) => nudge(event, index)}
